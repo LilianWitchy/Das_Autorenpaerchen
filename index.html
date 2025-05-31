@@ -4,44 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DAS Autorenpärchen</title>
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Grundlegendes Layout */
-    body {
+    /* Grundlayout */
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      height: 100vh;
       color: white;
-      overflow: hidden;
-      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .half {
       width: 50%;
       padding: 2rem;
-      box-sizing: border-box;
-      height: 100vh;
-      overflow-y: auto;
-      position: relative;
+      background-color: #6a4b8c;
     }
 
     .left {
       background: url('universum.jpg') no-repeat center center;
       background-size: cover;
-      position: relative;
       color: #f5f5f5;
+      position: relative;
     }
 
     .left::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       background-color: rgba(0, 0, 0, 0.6);
-      pointer-events: none;
       z-index: 0;
     }
 
@@ -51,66 +49,27 @@
     }
 
     .right {
-      position: relative;
-      z-index: 10;
-      overflow-x: hidden;
       background-color: #6a4b8c;
     }
 
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 50%;
-      width: 50vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 5;
-      background: transparent;
-      overflow: hidden;
-    }
-
-    .star {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background-color: white;
-      border-radius: 50%;
-      opacity: 0;
-      animation: twinkle linear infinite;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
-    }
-
     .menu-button {
-      position: absolute;
-      top: 1rem;
+      position: relative;
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid white;
       color: white;
       padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
       cursor: pointer;
-      z-index: 20;
-    }
-
-    .left .menu-button {
-      left: 1rem;
-    }
-
-    .right .menu-button {
-      right: 1rem;
+      z-index: 10;
     }
 
     .menu {
-      position: absolute;
-      top: 3.5rem;
       background-color: rgba(0, 0, 0, 0.85);
       border: 1px solid white;
       padding: 1rem;
       display: none;
-      z-index: 20;
+      margin-bottom: 1.5rem;
+      z-index: 10;
     }
 
     .menu a {
@@ -123,14 +82,6 @@
     .menu a:hover {
       text-decoration: underline;
       color: #ffd700;
-    }
-
-    .left .menu {
-      left: 1rem;
-    }
-
-    .right .menu {
-      right: 1rem;
     }
 
     h1 {
@@ -150,39 +101,50 @@
     }
 
     .divider {
-      position: absolute;
-      left: 50%;
-      width: 2px;
-      height: 100vh;
-      background: linear-gradient(to bottom, #fff, #888, #fff);
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #fff, #888, #fff);
       opacity: 0.3;
-      z-index: 10;
+      margin: 1rem 0;
     }
 
-    @media (max-width: 768px) {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Responsive Anpassungen */
+    @media (max-width: 1024px) {
+      .half {
+        width: 100%;
+        padding: 1.5rem;
+      }
+
       body {
         flex-direction: column;
       }
 
-      .half {
-        width: 100%;
-        height: auto;
+      h1 {
+        font-size: 1.5em;
       }
 
-      .divider {
-        display: none;
+      p {
+        font-size: 1em;
       }
 
-      .stars {
-        left: 0;
-        width: 100vw;
-        position: fixed;
+      .menu-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 1em;
+      }
+
+      .menu a {
+        font-size: 1em;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Linke Hälfte: Er -->
+  <!-- Linke Hälfte -->
   <div class="half left">
     <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
     <div class="menu" id="menu-left">
@@ -194,14 +156,14 @@
       <a href="kontakt2-html">Kontakt</a>
       <a href="impressum2.html">Impressum</a>
     </div>
-    <h1>Er: T.Ben Talion Autor einer Dark Fantasy Reihe</h1>
+    <h1>Er: T.Ben Talion – Autor einer Dark Fantasy Reihe</h1>
     <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
     <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
     <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
     <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
   </div>
 
-  <!-- Rechte Hälfte: Sie -->
+  <!-- Rechte Hälfte -->
   <div class="half right">
     <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
     <div class="menu" id="menu-right">
@@ -213,53 +175,35 @@
       <a href="kontakt1.html">Kontakt</a>
       <a href="impressum1.html">Impressum</a>
     </div>
-    <h1>Sie: Elisabeth-Ann Wolf Achtsame und bewusste Traumreisen für Erwachsene und Kinder</h1>
+    <h1>Sie: Elisabeth-Ann Wolf – Achtsame und bewusste Traumreisen</h1>
     <p class="intro">Sie schreibt Worte wie fließendes Licht – achtsam, heilend, intuitiv.</p>
     <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder Einschlafgeschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
     <p>Bei den Büchern für die Kinder übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
 
     <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
       <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-      <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
+      <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können.</p>
 
       <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
 
-      <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten. Es gibt so vieles, was möglich ist – wenn wir uns öffnen und den Mut haben, unserer inneren Wahrheit zu folgen.</p>
+      <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten.</p>
 
-      <p>Wie Kerry K. so treffend sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun. Ein Funke reicht aus, um ein ganzes Feuer der Transformation zu entfachen.</p>
-
-      <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
+      <p>Wie Kerry K. sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun.</p>
 
       <p><strong>Von Herzen, Lilian</strong></p>
-      <img src="relax.png" alt="Relaxbild" style="max-width: 100%; height: auto;" />
+      <img src="relax.png" alt="Relaxbild" />
     </div>
   </div>
 
-  <!-- Trennlinie in der Mitte -->
-  <div class="divider"></div>
-
-  <!-- Sterne Hintergrund rechts -->
-  <div class="stars"></div>
-
-  <!-- JavaScript für Menüs und Sterne -->
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
+      const allMenus = document.querySelectorAll('.menu');
+      allMenus.forEach(m => {
+        if (m.id !== id) m.style.display = 'none';
+      });
       menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
-
-    // Sterne erzeugen rechts
-    document.addEventListener("DOMContentLoaded", function () {
-      const starContainer = document.querySelector(".stars");
-      for (let i = 0; i < 50; i++) {
-        const star = document.createElement("div");
-        star.className = "star";
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.left = (Math.random() * 50 + 50) + "vw"; // rechts (50% bis 100%)
-        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-        starContainer.appendChild(star);
-      }
-    });
   </script>
 </body>
 </html>
