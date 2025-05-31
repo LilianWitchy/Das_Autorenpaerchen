@@ -1,88 +1,88 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Talion's World</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Externe CSS-Datei -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ben Talion's World</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen">
+<body class="bg-black text-white min-h-screen flex flex-col">
 
-    <!-- Menü-Button -->
-<div class="half left">
-    <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
-    <div class="menu" id="menu-left">
-      <a href="index.html">Startseite</a>
-      <a href="about2.html">Über mich</a>
-      <a href="meinebücher2.html">Meine Werke</a>
-      <a href="termine2.html">Termine / Veranstaltungen</a>
-      <a href="agb2.html">AGB</a>
-      <a href="kontakt2.html">Kontakt</a>
-      <a href="impressum2.html">Impressum</a>
+  <!-- Mobile Menü-Button -->
+  <div class="md:hidden p-4 bg-purple-900 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-yellow-400">Ben Talion's World</h1>
+    <button id="menu-btn" class="text-3xl text-yellow-400">☰</button>
+  </div>
+
+  <!-- Sidebar-Menü (mobil + desktop) -->
+  <div id="side-menu" class="fixed top-0 left-0 w-64 h-full bg-purple-950 text-white transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-50 shadow-lg p-6">
+    <div class="flex justify-between items-center mb-6 md:hidden">
+      <span class="text-lg font-bold text-yellow-400">Menü</span>
+      <button id="close-btn" class="text-white text-2xl">✕</button>
     </div>
+    <nav class="flex flex-col space-y-4">
+      <a href="index.html" class="hover:text-yellow-400">Startseite</a>
+      <a href="about2.html" class="hover:text-yellow-400">Über mich</a>
+      <a href="meinebücher2.html" class="hover:text-yellow-400">Meine Werke</a>
+      <a href="termine2.html" class="hover:text-yellow-400">Termine / Veranstaltungen</a>
+      <a href="agb2.html" class="hover:text-yellow-400">AGB</a>
+      <a href="kontakt2.html" class="hover:text-yellow-400">Kontakt</a>
+      <a href="impressum2.html" class="hover:text-yellow-400">Impressum</a>
+    </nav>
+  </div>
 
-    <!-- Header -->
-    <header class="text-center text-yellow-400 text-4xl font-bold p-6 bg-black bg-opacity-80">
-        Ben Talion's World
+  <!-- Hauptinhalt -->
+  <main class="flex-1 p-6 md:ml-64">
+    <header class="text-center text-yellow-400 text-4xl font-bold mb-8">
+      Ben Talion's World
     </header>
 
+    <section class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold text-yellow-400 text-center mb-4">Allgemeine Geschäftsbedingungen (AGB)</h1>
 
+      <h2 class="text-2xl font-semibold mt-6">1. Geltungsbereich</h2>
+      <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Inhalte und Dienstleistungen, die auf der Webseite „Lilian’s Witchy World“ angeboten werden.</p>
 
- <!-- AGB-Bereich mit Schatten und Hintergrund -->
-<div class="bg-black bg-opacity-70 p-6 rounded-lg shadow-lg max-w-4xl mx-auto mt-8 text-white">
-    <h1 class="text-3xl font-bold text-yellow-400 text-center">Allgemeine Geschäftsbedingungen (AGB)</h1>
+      <h2 class="text-2xl font-semibold mt-6">2. Urheberrecht</h2>
+      <p>Alle auf dieser Website veröffentlichten Inhalte, einschließlich Texte, Bilder, Grafiken, Logos, Videos und andere Materialien, sind urheberrechtlich geschützt. Das Urheberrecht an allen Inhalten dieser Website liegt bei [Dein Name / Deine Firma], sofern nicht anders angegeben. Eine Verwendung der Inhalte bedarf der ausdrücklichen schriftlichen Zustimmung.</p>
+      <p class="mt-2">Jegliche Nutzung ohne Genehmigung stellt einen Verstoß gegen das Urheberrecht dar. Bei Fragen wenden Sie sich bitte an [Deine Kontaktadresse oder E-Mail].</p>
 
-    <h2 class="text-2xl font-semibold mt-6">1. Geltungsbereich</h2>
-    <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Inhalte und Dienstleistungen, die auf der Webseite „Lilian’s Witchy World“ angeboten werden.</p>
+      <h2 class="text-2xl font-semibold mt-6">3. Verkauf von Büchern über Amazon</h2>
+      <p>Die auf dieser Webseite vorgestellten Bücher sind über Amazon erhältlich. Der Kaufvertrag kommt ausschließlich zwischen dem Kunden und Amazon zustande.</p>
 
-    <h3 class="text-xl font-semibold mt-4">2. Urheberrecht</h3>
-    <p>Alle auf dieser Website veröffentlichten Inhalte, einschließlich Texte, Bilder, Grafiken, Logos, Videos und andere Materialien, sind urheberrechtlich geschützt. Das Urheberrecht an allen Inhalten dieser Website liegt bei [Dein Name / Deine Firma], sofern nicht anders angegeben. Eine Verwendung der Inhalte, insbesondere deren Vervielfältigung, Verbreitung oder öffentliche Wiedergabe, bedarf der ausdrücklichen schriftlichen Zustimmung von [Dein Name / Deine Firma].</p>
-    
-    <p class="mt-2">Jegliche Nutzung von Inhalten dieser Website ohne vorherige schriftliche Genehmigung ist unzulässig und stellt einen Verstoß gegen das Urheberrecht dar. Bei Fragen oder Anfragen zur Nutzung von Inhalten wenden Sie sich bitte an [Deine Kontaktadresse oder E-Mail].</p>
+      <h2 class="text-2xl font-semibold mt-6">4. Buch-Empfehlungen</h2>
+      <p>Diese Empfehlungen basieren auf persönlichen Erfahrungen. Es wird keine Haftung für die Inhalte oder Wirkung der empfohlenen Bücher übernommen.</p>
 
-    <h2 class="text-2xl font-semibold mt-6">3. Verkauf von Büchern über Amazon</h2>
-    <p>Die auf dieser Webseite vorgestellten und empfohlenen Bücher sind über Amazon erhältlich. Der Kaufvertrag kommt ausschließlich zwischen dem Kunden und Amazon zustande. Für Bestellungen, Versand, Retouren und sonstige Anliegen gelten die AGB von Amazon.</p>
+      <h2 class="text-2xl font-semibold mt-6">5. Haftungsausschluss</h2>
+      <p>Keine Haftung für Schäden oder gesundheitliche Beeinträchtigungen, die durch die Nutzung der bereitgestellten Inhalte entstehen. Es handelt sich nicht um medizinische Beratung.</p>
 
-    <h2 class="text-2xl font-semibold mt-6">4. Buch-Empfehlungen</h2>
-    <p>Die auf dieser Webseite angegebenen Buchempfehlungen basieren auf persönlichen Erfahrungen und Bewertungen. Es wird keine Haftung für die Inhalte der empfohlenen Bücher oder deren Wirkung übernommen.</p>
+      <h2 class="text-2xl font-semibold mt-6">6. Änderungen der AGB</h2>
+      <p>Die Betreiberin behält sich das Recht vor, diese AGB jederzeit zu ändern. Änderungen treten mit der Veröffentlichung auf dieser Webseite in Kraft.</p>
+    </section>
+  </main>
 
-    <h2 class="text-2xl font-semibold mt-6">5. Haftungsausschluss</h2>
-    <p>Es wird keine Haftung für Schäden oder gesundheitliche Beeinträchtigungen übernommen, die durch die Nutzung der hier bereitgestellten Inhalte entstehen. Alle Informationen dienen der allgemeinen Information und stellen keine medizinische oder therapeutische Beratung dar.</p>
-
-    <h2 class="text-2xl font-semibold mt-6">6. Änderungen der AGB</h2>
-    <p>Die Betreiberin behält sich das Recht vor, diese AGB jederzeit anzupassen. Änderungen treten mit der Veröffentlichung auf dieser Webseite in Kraft.</p>
-</div>
-
-
-    <!-- JavaScript für das Menü -->
-   <script>
+  <!-- JavaScript für Menü-Steuerung -->
+  <script>
     const menuBtn = document.getElementById('menu-btn');
     const closeBtn = document.getElementById('close-btn');
     const sideMenu = document.getElementById('side-menu');
 
-    // Öffnen des Menüs
     menuBtn.addEventListener('click', () => {
-        sideMenu.classList.remove('-translate-x-full'); // Menü öffnen
+      sideMenu.classList.remove('-translate-x-full');
     });
 
-    // Schließen des Menüs
     closeBtn.addEventListener('click', () => {
-        sideMenu.classList.add('-translate-x-full'); // Menü schließen
+      sideMenu.classList.add('-translate-x-full');
     });
 
-    // Optional: Menü schließen, wenn man außerhalb des Menüs klickt
     document.addEventListener('click', (event) => {
-        if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-            sideMenu.classList.add('-translate-x-full'); // Menü schließen
-        }
+      if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target) && window.innerWidth < 768) {
+        sideMenu.classList.add('-translate-x-full');
+      }
     });
-</script>
-
+  </script>
 
 </body>
 </html>
+
