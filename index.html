@@ -50,12 +50,28 @@
     }
 
     /* Rechte Hälfte - magischer Sternenhintergrund */
-    .right {
-      background-color: #461361;
-      font-family: Garamond, serif;
-      position: relative;
-      overflow-x: hidden;
-    }
+   <style>
+  /* ... dein bestehender Stil ... */
+
+  .right {
+    position: relative; /* damit z-index funktioniert */
+    z-index: 10; /* Inhalt liegt über den Sternen */
+    overflow-x: hidden;
+  }
+
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 50%;  /* rechte Hälfte */
+    width: 50vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;  /* hinter dem Inhalt aber vor dem Body */
+    background: transparent;
+  }
+
+  /* ... restlicher CSS-Code ... */
+
 
     /* Menü-Schaltflächen */
     .menu-button {
