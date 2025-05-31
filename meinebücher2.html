@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Talion's World</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Externe CSS-Datei -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white">
+    
+    <!-- Menü-Button -->
+    <button id="menu-btn" class="fixed top-4 left-4 bg-gray-800 text-white px-4 py-2 rounded">
+        ☰ Menü
+    </button>
+
+    <!-- Seitenmenü -->
+    <nav id="side-menu" class="fixed top-0 left-0 w-64 h-full bg-black bg-opacity-90 transform -translate-x-full transition-transform duration-300 p-4">
+        <button id="close-btn" class="text-white text-2xl">&times;</button>
+        <ul class="mt-4 space-y-4 text-white">
+            <li><a href="index.html" class="hover:text-yellow-400">Startseite</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Über mich</a></li>
+            <li><a href="meinebücher.html" class="hover:text-yellow-400">Meine Bücher</a></li>
+            <li><a href="#" class="hover:text-yellow-400">Meine Mission für die Zukunft</a></li>
+            <li><a href="buchempfehlen.html" class="hover:text-yellow-400">Bücher, die ich empfehle</a></li>
+            <li><a href="impressum.html" class="hover:text-yellow-400">Impressum</a></li>
+            <li><a href="agb.html" class="hover:text-yellow-400">AGB</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hauptinhalt -->
+    <div class="flex flex-col items-center text-center p-6">
+       <!-- Header mit Titel und Untertext -->
+<header class="text-center p-6 bg-black bg-opacity-80 w-full">
+    <h1 class="text-4xl font-bold text-yellow-400">Ben Talion's World</h1>
+    <p class="text-lg text-white mt-2">
+        Ein Reich zwischen Licht und Schatten, in dem uralte Kraftsteine über das Schicksal entscheiden.<br>
+        Hier findest du meine bereits veröffentlichten Bücher.
+    </p>
+</header>
+
+
+      
+        <!-- Bücher -->
+<div class="mt-6 flex space-x-6">
+    <a href="https://www.amazon.de/Kraftstein-Schatten-T-Ben-Talion-ebook/dp/B0DJK71WNW" target="_blank" class="text-center">
+        <img src="kraftsteinb1.JPG" alt="Buch 1: Kraftstein - Licht und Schatten" class="w-48 rounded shadow-lg">
+        <p class="mt-2"><strong>Buch 1: Kraftstein - Licht und Schatten</strong></p>
+    </a>
+
+    <a href="https://www.amazon.de/Power-Stone-Light-Shadow-English-ebook/dp/B0DK55KPXG" target="_blank" class="text-center">
+        <img src="powerstoneb1.JPG" alt="Buch 1: Power Stone - Light and Shadow" class="w-48 rounded shadow-lg">
+        <p class="mt-2"><strong>Buch 1: Power Stone - Light and Shadow</strong></p>
+    </a>
+</div>
+
+    </div>
+
+    <!-- JavaScript für das Menü -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const sideMenu = document.getElementById('side-menu');
+
+        menuBtn.addEventListener('click', () => {
+            sideMenu.classList.remove('-translate-x-full');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sideMenu.classList.add('-translate-x-full');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                sideMenu.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+
+</body>
+</html>
