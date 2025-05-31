@@ -14,23 +14,17 @@
 <body class="flex flex-col items-center justify-center min-h-screen">
 
     <!-- Menü-Button -->
-    <button id="menu-btn" class="fixed top-4 left-4 bg-gray-800 text-white px-4 py-2 rounded">
-        ☰ Menü
-    </button>
-
-    <!-- Seitenmenü -->
-    <nav id="side-menu" class="fixed top-0 left-0 w-64 h-full bg-black bg-opacity-90 transform -translate-x-full transition-transform duration-300 p-4">
-        <button id="close-btn" class="text-white text-2xl">&times;</button>
-        <ul class="mt-4 space-y-4 text-white">
-            <li><a href="index.html" class="hover:text-yellow-400">Startseite</a></li>
-            <li><a href="#" class="hover:text-yellow-400">Über mich</a></li>
-            <li><a href="meinebücher.html" class="hover:text-yellow-400">Meine Bücher</a></li>
-            <li><a href="#" class="hover:text-yellow-400">Meine Mission für die Zukunft</a></li>
-            <li><a href="buchempfehlen.html" class="hover:text-yellow-400">Bücher, die ich empfehle</a></li>
-            <li><a href="impressum.html" class="hover:text-yellow-400">Impressum</a></li>
-            <li><a href="agb.html" class="hover:text-yellow-400">AGB</a></li>
-        </ul>
-    </nav>
+<div class="half left">
+    <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
+    <div class="menu" id="menu-left">
+      <a href="index.html">Startseite</a>
+      <a href="#about2.html">Über mich</a>
+      <a href="meinebücher2.html">Meine Werke</a>
+      <a href="#">Termine / Veranstaltungen</a>
+      <a href="agb2.html">AGB</a>
+      <a href="kontakt2.html">Kontakt</a>
+      <a href="impressum2.html">Impressum</a>
+    </div>
 
     <!-- Header -->
     <header class="text-center text-yellow-400 text-4xl font-bold p-6 bg-black bg-opacity-80">
