@@ -2,126 +2,151 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <!-- Definiert die Zeichencodierung der Webseite als UTF-8 -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Macht die Webseite auf mobilen Geräten responsiv -->
+
   <title>DAS Autorenpärchen</title>
+  <!-- Titel der Webseite, wird im Browser-Tab angezeigt -->
+
   <style>
+    /* Reset und Box-Sizing */
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      box-sizing: border-box; /* Padding und Border werden zur Gesamtbreite dazugerechnet */
+      margin: 0; /* Entfernt Standard-Außenabstände */
+      padding: 0; /* Entfernt Standard-Innenabstände */
     }
 
+    /* Grundstil für den Body */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      background-color: #000;
-      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif; /* Schriftart der Webseite */
+      color: white; /* Textfarbe weiß */
+      background-color: #000; /* Hintergrundfarbe schwarz */
+      overflow-x: hidden; /* Verhindert horizontales Scrollen */
     }
 
+    /* Kopfzeile / Überschrift */
     .headline {
-      width: 100%;
-      text-align: center;
-      background-color: #013220;
-      padding: 1.5rem 1rem;
-      font-size: 2.2em;
-      font-weight: bold;
-      color: #ffd700;
-      letter-spacing: 1px;
+      width: 100%; /* Volle Breite */
+      text-align: center; /* Text zentriert */
+      background-color: black; /* Dunkelgrüner Hintergrund */
+      padding: 1.5rem 1rem; /* Innenabstand */
+      font-size: 2.2em; /* Große Schrift */
+      font-weight: bold; /* Fettschrift */
+      color: silver; /* Goldene Schriftfarbe */
+      letter-spacing: 1px; /* Abstand zwischen Buchstaben */
     }
 
+    /* Einleitender Text unter der Überschrift */
     .intro-text {
       text-align: center;
       padding: 1rem;
-      background-color: #111;
+      background-color: #111; /* Sehr dunkles Grau */
     }
 
+    /* Container für die beiden Hälften (links & rechts) */
     .container {
-      display: flex;
-      flex-wrap: wrap;
-      min-height: 100vh;
+      display: flex; /* Flexbox-Layout */
+      flex-wrap: wrap; /* Zeilenumbruch bei Bedarf */
+      min-height: 100vh; /* Mindestens die Höhe des Browserfensters */
     }
 
+    /* Jede Hälfte nimmt 50% der Breite ein */
     .half {
       width: 50%;
       padding: 2rem;
-      position: relative;
+      position: relative; /* Für absolute Positionierung von Kind-Elementen */
     }
 
+    /* Linke Hälfte mit Hintergrundbild */
     .left {
-      background: url('universum.jpg') no-repeat center center;
-      background-size: cover;
-      color: #f5f5f5;
+      background: url('universum.jpg') no-repeat center center; /* Bild zentriert ohne Wiederholung */
+      background-size: cover; /* Bild füllt den Bereich */
+      color: #f5f5f5; /* Hellgraue Schrift */
     }
 
+    /* Dunkle halbtransparente Schicht über dem Hintergrundbild */
     .left::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      z-index: 0;
+      content: ""; /* Leeres Pseudoelement */
+      position: absolute; /* Position relativ zum Eltern-Element */
+      inset: 0; /* Oben, rechts, unten, links auf 0 */
+      background-color: rgba(0, 0, 0, 0.6); /* Schwarze halbtransparente Überlagerung */
+      z-index: 0; /* Hintergrundebene */
     }
 
+    /* Inhalt in der linken Hälfte vor der Überlagerung */
     .left > * {
       position: relative;
-      z-index: 1;
+      z-index: 1; /* Oberhalb der Überlagerung */
     }
 
+    /* Rechte Hälfte mit einfarbigem Hintergrund */
     .right {
-      background-color: #6a4b8c;
+      background-color: #6a4b8c; /* Lila Hintergrund */
     }
 
+    /* Stil für Menü-Buttons */
     .menu-button {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1); /* Weiße, halbtransparente Fläche */
       border: 1px solid white;
       color: white;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
-      cursor: pointer;
+      cursor: pointer; /* Zeigt Hand-Cursor an */
     }
 
+    /* Das versteckte Menü, das per Button angezeigt wird */
     .menu {
-      background-color: rgba(0, 0, 0, 0.85);
+      background-color: rgba(0, 0, 0, 0.85); /* Dunkel halbtransparent */
       border: 1px solid white;
       padding: 1rem;
-      display: none;
+      display: none; /* Standardmäßig ausgeblendet */
       margin-bottom: 1.5rem;
     }
 
+    /* Links im Menü */
     .menu a {
-      display: block;
+      display: block; /* Jeder Link in eigener Zeile */
       color: white;
-      text-decoration: none;
+      text-decoration: none; /* Keine Unterstreichung */
       margin: 0.5rem 0;
     }
 
+    /* Hover-Effekt für Menülinks */
     .menu a:hover {
       text-decoration: underline;
-      color: #ffd700;
+      color: #ffd700; /* Gold */
     }
 
+    /* Überschriften */
     h1 {
       font-size: 2em;
       margin-bottom: 0.5em;
     }
 
+    /* Fließtext */
     p {
       font-size: 1.1em;
-      line-height: 1.6;
+      line-height: 1.6; /* Zeilenhöhe für bessere Lesbarkeit */
       margin-bottom: 1rem;
     }
 
+    /* Kursiver Einleitungstext mit Transparenz */
     .intro {
       font-style: italic;
       opacity: 0.8;
     }
 
+    /* Bilder werden responsiv */
     img {
       max-width: 100%;
       height: auto;
     }
 
+    /* Button unten in der Hälfte */
     .footer-button {
-      position: absolute;
+      position: absolute; /* Absolut positioniert innerhalb .half */
       bottom: 20px;
       padding: 0.6rem 1rem;
       background-color: rgba(255, 255, 255, 0.1);
@@ -129,33 +154,37 @@
       color: white;
       text-decoration: none;
       font-size: 0.95rem;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease; /* Weicher Farbwechsel bei Hover */
     }
 
+    /* Hover-Effekt für Footer-Buttons */
     .footer-button:hover {
       background-color: rgba(255, 255, 255, 0.25);
     }
 
+    /* Positionierung der linken Schaltfläche */
     .left-button {
       left: 20px;
     }
 
+    /* Positionierung der rechten Schaltfläche */
     .right-button {
       right: 20px;
     }
 
+    /* Responsive Design: ab einer Breite von maximal 1024px */
     @media (max-width: 1024px) {
       .container {
-        flex-direction: column;
+        flex-direction: column; /* Elemente untereinander */
       }
 
       .half {
-        width: 100%;
+        width: 100%; /* Ganze Breite */
         padding: 1.5rem;
       }
 
       .footer-button {
-        position: static;
+        position: static; /* Normale Position */
         display: block;
         margin: 1rem auto 0;
         text-align: center;
@@ -165,16 +194,25 @@
 </head>
 <body>
 
+  <!-- Überschrift oben -->
   <div class="headline">DAS Autorenpärchen</div>
+
+  <!-- Einleitender Text unter der Überschrift -->
   <div class="intro-text">
     <p>Bereits in Liebe vereint. Nun auch im Schreiben eine gemeinsame Leidenschaft gefunden.</p>
     <p>Diese Seite ist noch mitten im Aufbau und wird von mir selbst programmiert. Deshalb verzeiht mir bitte Fehler.</p>
   </div>
 
+  <!-- Container für linke und rechte Hälfte -->
   <div class="container">
+
     <!-- Linke Hälfte – Er -->
     <div class="half left">
+
+      <!-- Menü-Button, öffnet/öffnet das linke Menü -->
       <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
+
+      <!-- Linkes Menü, zunächst verborgen -->
       <div class="menu" id="menu-left">
         <a href="index.html">Startseite</a>
         <a href="about2.html">Über mich</a>
@@ -184,17 +222,25 @@
         <a href="kontakt2.html">Kontakt</a>
         <a href="impressum2.html">Impressum</a>
       </div>
+
+      <!-- Titel und Text links -->
       <h1>Er: T.Ben Talion – Autor einer Dark Fantasy Reihe</h1>
       <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
       <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
       <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
       <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
+
+      <!-- Link zur eigenen Webseite als Button -->
       <a href="https://lilianwitchy.github.io/Ben-Talions-World/" class="footer-button left-button" target="_blank">Meine eigene Webseite</a>
     </div>
 
     <!-- Rechte Hälfte – Sie -->
     <div class="half right">
+
+      <!-- Menü-Button für rechte Seite -->
       <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
+
+      <!-- Rechtes Menü -->
       <div class="menu" id="menu-right">
         <a href="index.html">Startseite</a>
         <a href="about1.html">Über mich</a>
@@ -204,10 +250,14 @@
         <a href="kontakt1.html">Kontakt</a>
         <a href="impressum1.html">Impressum</a>
       </div>
+
+      <!-- Titel und Text rechts -->
       <h1>Sie: Elisabeth-Ann Wolf – Achtsame und bewusste Traumreisen</h1>
       <p class="intro">Sie schreibt Worte wie fließendes Licht – achtsam, heilend, intuitiv.</p>
       <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder Einschlafgeschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
       <p>Bei den Büchern für die Kinder übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
+
+      <!-- Besonderer Textbereich mit eigenem Stil -->
       <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
         <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
         <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können.</p>
@@ -215,21 +265,29 @@
         <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten.</p>
         <p>Wie Kerry K. sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun.</p>
         <p><strong>Von Herzen, Lilian</strong></p>
+
+        <!-- Bild -->
         <img src="relax.png" alt="Relaxbild" />
       </div>
+
+      <!-- Link zur Webseite als Button -->
       <a href="https://lilians-witchy-world.com/" class="footer-button right-button" target="_blank">Meine eigene Webseite</a>
     </div>
   </div>
 
+  <!-- Hinweistext am unteren Rand -->
   <div class="intro-text"><p>Mit Besuch dieser Webseite, werden die AGB akzeptiert.</p></div>
 
+  <!-- JavaScript zum Ein-/Ausblenden der Menüs -->
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
       const allMenus = document.querySelectorAll('.menu');
+      // Alle Menüs schließen, außer das angeklickte
       allMenus.forEach(m => {
         if (m.id !== id) m.style.display = 'none';
       });
+      // Das angeklickte Menü umschalten (anzeigen/verstecken)
       menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
   </script>
