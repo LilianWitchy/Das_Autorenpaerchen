@@ -41,7 +41,6 @@
 
     .navmenu li {
       margin: 5px 15px;
-      position: relative;
     }
 
     .navmenu a {
@@ -57,7 +56,7 @@
       border-radius: 5px;
     }
 
-    .impressum-container {
+    .kontakt-container {
       margin: 30px auto;
       padding: 20px;
       background-color: #660082;
@@ -68,20 +67,69 @@
       color: #f0f0f0;
     }
 
-    .impressum-container h1 {
+    .kontakt-container h1 {
       margin-bottom: 1rem;
       text-align: center;
       color: #b0d5ac;
     }
 
-    .impressum-container p,
-    .impressum-container address {
+    .kontakt-container p,
+    .kontakt-container address {
       font-size: 16px;
       line-height: 1.6;
       margin-bottom: 1rem;
     }
 
+    button.instagram-button {
+      background-color: #E1306C;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+      margin: 5px 0;
+    }
+
+    button.instagram-button img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="email"] {
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    button[type="submit"] {
+      padding: 8px 16px;
+      background-color: #0aa667;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #087c4d;
+    }
+
+    /* Responsive Menü */
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
       .navmenu {
         display: none;
         flex-direction: column;
@@ -89,15 +137,16 @@
         background-color: #0aa667;
       }
 
-      .menu-toggle {
-        display: block;
-      }
-
       .navmenu.show {
         display: flex;
       }
-      
-      .impressum-container {
+
+      .navmenu li {
+        text-align: center;
+        margin: 0;
+      }
+
+      .kontakt-container {
         padding: 15px;
         max-width: 95%;
       }
@@ -126,34 +175,31 @@
     <h1>Kontakt</h1>
 
     <a href="https://www.instagram.com/elisabethann_wolf" target="_blank">
-    <button style="background-color: #E1306C; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
-        <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle;">
-        Folge mir auf Instagram
-    </button>
-</a>
+      <button class="instagram-button">
+        <img src="instagram.png" alt="Instagram"> Folge Elisabeth-Ann auf Instagram
+      </button>
+    </a>
 
     <a href="https://www.instagram.com/das_autorenpaerchen/" target="_blank">
-    <button style="background-color: #E1306C; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
-        <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle;">
-        Folge mir auf Instagram
-    </button>
-</a>
+      <button class="instagram-button">
+        <img src="instagram.png" alt="Instagram"> Folge dem Autorenpärchen auf Instagram
+      </button>
+    </a>
 
+    <a href="https://www.youtube.com/channel/UC60W9fyZAJyXKZ3vzj3OxLA" target="_blank">
+      <img src="youtube.png" alt="YouTube" width="50" height="50">
+    </a>
 
-<a href="https://www.youtube.com/channel/UC60W9fyZAJyXKZ3vzj3OxLA" target="_blank">
-    <img src="youtube.png" alt="YouTube" width="50" height="50">
-</a>
+    <form action="https://formspree.io/f/mkgjyywk" method="POST">
+      <label for="email">Möchtest du mehr über meine Arbeit, kommende Bücher und spannende Projekte erfahren? Dann trage dich hier für meinen Newsletter ein und bleibe auf dem Laufenden!</label><br>
+      <input type="email" name="email" id="email" required placeholder="dein@email.de">
+      <button type="submit">Anmelden</button>
 
-
-<form action="https://formspree.io/f/mkgjyywk" method="POST">
-  <label for="email">Möchtest du mehr über meine Arbeit, kommende Bücher und spannende Projekte erfahren? Dann trage dich hier für meinen Newsletter ein und bleibe auf dem Laufenden!</label><br>
-  <input type="email" name="email" id="email" required placeholder="dein@email.de">
-  <button type="submit">Anmelden</button>
-
-  <p style="font-size: small;">
-    Mit dem Absenden erklärst du dich mit der Speicherung deiner E-Mail-Adresse zum Zweck des Newsletter-Versands einverstanden.
-    <a href="/agb.html">Mehr erfahren</a>
-  </p>
+      <p style="font-size: small;">
+        Mit dem Absenden erklärst du dich mit der Speicherung deiner E-Mail-Adresse zum Zweck des Newsletter-Versands einverstanden.
+        <a href="/agb.html">Mehr erfahren</a>
+      </p>
+    </form>
   </div>
 
   <!-- JavaScript Menü -->
