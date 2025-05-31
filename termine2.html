@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über den Autor</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Konfiguration für benutzerdefinierte Farben (optional) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#facc15', // Gelb für Text und Umrandung
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-black text-white font-sans relative">
+
+  <!-- Hintergrundbild -->
+  <div class="fixed inset-0 z-0">
+    <img src="universum.jpg" alt="Universum Hintergrund" class="object-cover w-full h-full opacity-20" />
+  </div>
+
+  <!-- Mobile Menü Button -->
+  <div class="md:hidden p-4 z-20 relative">
+    <button id="menuButton" class="text-primary border border-primary px-3 py-1 rounded">
+      ☰ Menü
+    </button>
+  </div>
+
+  <!-- Menü -->
+  <aside id="sidebar" class="bg-black bg-opacity-70 p-4 space-y-2 fixed top-0 left-0 h-full w-60 z-10 transform -translate-x-full md:translate-x-0 md:static md:block transition-transform duration-300 ease-in-out">
+    <h2 class="text-xl font-bold text-primary mb-4">Menü</h2>
+    <nav class="flex flex-col space-y-2">
+      <a href="index.html" class="hover:text-primary">Startseite</a>
+      <a href="about.html" class="hover:text-primary">Über mich</a>
+      <a href="meinebücher2.html" class="hover:text-primary">Meine Werke</a>
+      <a href="termine2.html" class="hover:text-primary">Termine</a>
+      <a href="agb2.html" class="hover:text-primary">AGB</a>
+      <a href="kontakt2.html" class="hover:text-primary">Kontakt</a>
+      <a href="impressum2.html" class="hover:text-primary">Impressum</a>
+    </nav>
+  </aside>
+
+  <!-- Hauptinhalt -->
+  <main class="p-6 md:ml-60 relative z-10 transition-all">
+    <!-- Autorenbild -->
+  
+
+  
+    <!-- Neue Sektion: Veranstaltungen und Termine -->
+    <section class="max-w-3xl mx-auto bg-black bg-opacity-70 p-6 rounded-lg shadow-lg mt-12">
+      <h2 class="text-2xl font-bold text-primary mb-6">Unsere Veranstaltungen und Termine</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full table-auto border-collapse border border-gray-700 text-white">
+          <thead>
+            <tr class="bg-primary bg-opacity-30">
+              <th class="border border-gray-600 px-4 py-2 text-left">6.Juni2025, Vormittags</th>
+              <th class="border border-gray-600 px-4 py-2 text-left">WGT</th>
+              <th class="border border-gray-600 px-4 py-2 text-left">Vorm heidnischen Dorf</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-700">
+              <td class="border border-gray-600 px-4 py-2">6.Juni 2025, Nachmittags</td>
+              <td class="border border-gray-600 px-4 py-2">WGT</td>
+              <td class="border border-gray-600 px-4 py-2">Beim viktorianischem Picknick</td>
+            </tr>
+            <tr class="hover:bg-gray-700">
+              <td class="border border-gray-600 px-4 py-2">7.Juni 2025</td>
+              <td class="border border-gray-600 px-4 py-2">WGT</td>
+              <td class="border border-gray-600 px-4 py-2">vorm heidnischen Dorf</td>
+            </tr>
+            <tr class="hover:bg-gray-700">
+              <td class="border border-gray-600 px-4 py-2">8.Juni 2025</td>
+              <td class="border border-gray-600 px-4 py-2">WGT</td>
+              <td class="border border-gray-600 px-4 py-2">Vorm Heidnischen Dorf.</td>
+            </tr>
+            <tr class="hover:bg-gray-700">
+              <td class="border border-gray-600 px-4 py-2">9.Juni 2025</td>
+              <td class="border border-gray-600 px-4 py-2">WGT</td>
+              <td class="border border-gray-600 px-4 py-2">Vorm heidnischen Dorf</td>
+            </tr>
+          
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JavaScript für mobiles Menü -->
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+
+    menuButton.addEventListener('click', () => {
+      if (sidebar.classList.contains('-translate-x-full')) {
+        sidebar.classList.remove('-translate-x-full');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+  </script>
+</body>
+</html>
