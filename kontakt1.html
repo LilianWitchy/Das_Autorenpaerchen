@@ -1,187 +1,215 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt | Lilian´s Witchy World</title>
-    <style>
-        body {
-            font-family: Garamond, serif;
-            color: white;
-            background-color: #4e0261;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .navbar {
-            background-color: #0aa667;
-            padding: 10px 20px; /* Schmaler Balken */
-            position: relative;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between; /* Menü-Links und Button getrennt */
-            align-items: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Lilian´s Witchy World</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <style>
+    body {
+      font-family: Garamond, serif;
+      background-color: #4e0261;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-        .navmenu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            margin: 0;
-        }
+    .navbar {
+      background-color: #0aa667;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
 
-        .navmenu li {
-            margin-right: 30px;
-            position: relative; /* Für Dropdown-Menüs */
-        }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-        .navmenu a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
-            display: block;
-        }
+    .navmenu {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
 
-        .navmenu a:hover {
-            background-color: #b0d5ac;
-            border-radius: 5px;
-        }
+    .navmenu li {
+      margin: 5px 15px;
+      position: relative;
+    }
 
-        /* Dropdown-Menü */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #0aa667;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-        }
+    .navmenu a {
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      display: block;
+    }
 
-        .dropdown-content li a {
-            color: white;
-            padding: 10px;
-            text-decoration: none;
-        }
+    .navmenu a:hover {
+      background-color: #b0d5ac;
+      border-radius: 5px;
+    }
 
-        .dropdown-content li a:hover {
-            background-color: #f1f1f1;
-            color: #660082;
-        }
+    .contact-container {
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #660082;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+    }
 
-        .navmenu li:hover .dropdown-content {
-            display: block;
-        }
-        .contact-container {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #660082;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .contact-text {
-            font-size: 18px;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        input, textarea {
-            width: 90%;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #0aa667;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #088e59;
-        }
-    </style>
+    .contact-text {
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    input,
+    textarea {
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #0aa667;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #088e59;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .socials a img {
+      vertical-align: middle;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #0aa667;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+    }
+
+    .menu a {
+      padding: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .navmenu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0aa667;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .navmenu.show {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <div class="navbar">
+    <strong style="color: white;">Lilian's Witchy World</strong>
+    <div class="menu-toggle" onclick="toggleMenu()">☰ Menü</div>
+    <ul class="navmenu" id="menu">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="about1.html">Über mich</a></li>
+      <li><a href="meinebücher1.html">Meine Werke</a></li>
+      <li><a href="termine1.html">Termine / Veranstaltungen</a></li>
+      <li><a href="agb1.html">AGB</a></li>
+      <li><a href="kontakt1.html">Kontakt</a></li>
+      <li><a href="impressum1.html">Impressum</a></li>
+    </ul>
+  </div>
 
-    <p>Willkommen in der magischen Welt von Lilian (Autorenname = Elisabeth-Ann Wolf). Hier findest du Bücher, Zauber und vieles mehr.</p>
-
- 
-
-    <div class="half right">
-    <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
-    <div class="menu" id="menu-right">
-      <a href="index.html">Startseite</a>
-      <a href="about1.html">Über mich</a>
-      <a href="meinebücher1.html">Meine Werke</a>
-      <a href="termine1.html">Termine / Veranstaltungen</a>
-      <a href="agb1.html">AGB</a>
-      <a href="kontakt1.html">Kontakt</a>
-      <a href="impressum1.html">Impressum</a>
-    </div>
-        
-        <p class="contact-text">
-            Schön, dass du hier bist! 💜  
-            Ich freue mich, dass du den Weg zu meiner Seite gefunden hast.  
-            Falls du Fragen zu meiner Arbeit, meinen Projekten oder einfach etwas auf dem Herzen hast,  
-            kannst du mir hier eine Nachricht senden. Ich werde mich so bald wie möglich bei dir melden! ✨
-        </p>
-<a href="https://www.instagram.com/elisabethann_wolf" target="_blank">
-    <button style="background-color: #E1306C; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
-        <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle;">
-        Folge mir auf Instagram
-    </button>
-</a>
-
-<a href="https://www.youtube.com/channel/UC60W9fyZAJyXKZ3vzj3OxLA" target="_blank">
-    <img src="youtube.png" alt="YouTube" width="50" height="50">
-</a>
-
-<a href="https://lilians-witchy-world.com" target="_blank">
-    <img src="logo2.png" alt="Logo" width="50" height="50">
-</a>
-        
-
-<form action="https://formspree.io/f/mkgjyywk" method="POST">
-  <label for="email">Möchtest du mehr über meine Arbeit, kommende Bücher und spannende Projekte erfahren? Dann trage dich hier für meinen Newsletter ein und bleibe auf dem Laufenden!</label><br>
-  <input type="email" name="email" id="email" required placeholder="dein@email.de">
-  <button type="submit">Anmelden</button>
-
-  <p style="font-size: small;">
-    Mit dem Absenden erklärst du dich mit der Speicherung deiner E-Mail-Adresse zum Zweck des Newsletter-Versands einverstanden.
-    <a href="/agb.html">Mehr erfahren</a>
+  <!-- Begrüßung -->
+  <p style="padding: 20px;">
+    Willkommen in der magischen Welt von Lilian (Autorenname = Elisabeth-Ann Wolf).  
+    Hier findest du Bücher, Zauber und vieles mehr.
   </p>
-</form>
 
+  <!-- Kontaktbereich -->
+  <div class="contact-container">
+    <p class="contact-text">
+      Schön, dass du hier bist! 💜  
+      Ich freue mich, dass du den Weg zu meiner Seite gefunden hast.  
+      Falls du Fragen zu meiner Arbeit, meinen Projekten oder einfach etwas auf dem Herzen hast,  
+      kannst du mir hier eine Nachricht senden. Ich werde mich so bald wie möglich bei dir melden! ✨
+    </p>
 
-
-     
-
+    <!-- Social Media -->
+    <div class="socials">
+      <a href="https://www.instagram.com/elisabethann_wolf" target="_blank">
+        <button style="background-color: #E1306C;">
+          <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px;" />
+          Folge mir auf Instagram
+        </button>
+      </a>
+      <a href="https://www.youtube.com/channel/UC60W9fyZAJyXKZ3vzj3OxLA" target="_blank">
+        <img src="youtube.png" alt="YouTube" width="50" height="50" />
+      </a>
+      <a href="https://lilians-witchy-world.com" target="_blank">
+        <img src="logo2.png" alt="Logo" width="50" height="50" />
+      </a>
     </div>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "none" || menu.style.display === "") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-            }
-        }
-    </script>
+    <!-- Newsletter-Formular -->
+    <form action="https://formspree.io/f/mkgjyywk" method="POST" style="margin-top: 20px;">
+      <label for="email">Möchtest du mehr über meine Arbeit, kommende Bücher und spannende Projekte erfahren?</label><br />
+      <input type="email" name="email" id="email" required placeholder="dein@email.de" />
+      <br />
+      <button type="submit">Anmelden</button>
+
+      <p style="font-size: small; margin-top: 10px;">
+        Mit dem Absenden erklärst du dich mit der Speicherung deiner E-Mail-Adresse zum Zweck des Newsletter-Versands einverstanden.
+        <a href="agb1.html" style="color: #b0d5ac;">Mehr erfahren</a>
+      </p>
+    </form>
+  </div>
+
+  <!-- JavaScript Menü -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
