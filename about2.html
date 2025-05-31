@@ -8,36 +8,52 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Externe CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind Konfiguration für benutzerdefinierte Farben (optional) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#facc15', // Gelb für Text und Umrandung
+          }
+        }
+      }
+    };
+  </script>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white font-sans relative">
 
-  <!-- Hintergrundbild links -->
+  <!-- Hintergrundbild -->
   <div class="fixed inset-0 z-0">
     <img src="universum.jpg" alt="Universum Hintergrund" class="object-cover w-full h-full opacity-20">
   </div>
 
-  <!-- Menü links -->
-  <div class="fixed top-0 left-0 w-60 h-full bg-black bg-opacity-70 z-10 p-4">
-    <h2 class="text-xl font-bold text-yellow-400 mb-4">Menü</h2>
-    <nav class="flex flex-col space-y-2">
-      <a href="index.html" class="hover:text-yellow-400">Startseite</a>
-      <a href="about.html" class="hover:text-yellow-400">Über mich</a>
-      <a href="meinebücher2.html" class="hover:text-yellow-400">Meine Werke</a>
-      <a href="termine2.html" class="hover:text-yellow-400">Termine</a>
-      <a href="agb2.html" class="hover:text-yellow-400">AGB</a>
-      <a href="kontakt2.html" class="hover:text-yellow-400">Kontakt</a>
-      <a href="impressum2.html" class="hover:text-yellow-400">Impressum</a>
-    </nav>
+  <!-- Mobile Menü Button -->
+  <div class="md:hidden p-4 z-20 relative">
+    <button id="menuButton" class="text-primary border border-primary px-3 py-1 rounded">
+      ☰ Menü
+    </button>
   </div>
 
-  <!-- Hauptinhalt -->
-  <main class="ml-64 p-8 relative z-10">
+  <!-- Menü -->
+  <aside id="sidebar" class="bg-black bg-opacity-70 p-4 space-y-2 fixed top-0 left-0 h-full w-60 z-10 transform -translate-x-full md:translate-x-0 md:static md:block transition-transform duration-300 ease-in-out">
+    <h2 class="text-xl font-bold text-primary mb-4">Menü</h2>
+    <nav class="flex flex-col space-y-2">
+      <a href="index.html" class="hover:text-primary">Startseite</a>
+      <a href="about.html" class="hover:text-primary">Über mich</a>
+      <a href="meinebücher2.html" class="hover:text-primary">Meine Werke</a>
+      <a href="termine2.html" class="hover:text-primary">Termine</a>
+      <a href="agb2.html" class="hover:text-primary">AGB</a>
+      <a href="kontakt2.html" class="hover:text-primary">Kontakt</a>
+      <a href="impressum2.html" class="hover:text-primary">Impressum</a>
+    </nav>
+  </aside>
 
+  <!-- Hauptinhalt -->
+  <main class="p-6 md:ml-60 relative z-10 transition-all">
     <!-- Autorenbild -->
     <div class="flex justify-center mb-6">
-      <img src="autorbild.jpg" alt="Autor" class="w-64 h-auto rounded-full shadow-lg border-4 border-yellow-400">
+      <img src="autorbild.jpg" alt="Autor" class="w-48 sm:w-64 h-auto rounded-full shadow-lg border-4 border-primary">
     </div>
 
     <!-- Textbereich -->
@@ -50,7 +66,7 @@
         In der 11. Klasse hatte ich in beiden Halbjahren eine 5 in Deutsch auf dem Zeugnis zu stehen. Deswegen wollte ich Autor werden – um die Welt mit meiner schrecklichen Rechtschreibung und Ausdrucksweise zu unterjochen.
       </p>
 
-      <h3 class="text-xl font-semibold text-yellow-400 mt-6 mb-2">Stationen meines Lebens:</h3>
+      <h3 class="text-xl font-semibold text-primary mt-6 mb-2">Stationen meines Lebens:</h3>
       <ul class="list-disc list-inside space-y-1 text-white text-base">
         <li>Bürokaufmann</li>
         <li>Studium Soziologie</li>
@@ -62,7 +78,20 @@
         <li>Autor</li>
       </ul>
     </section>
-
   </main>
+
+  <!-- JavaScript für mobiles Menü -->
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+
+    menuButton.addEventListener('click', () => {
+      if (sidebar.classList.contains('-translate-x-full')) {
+        sidebar.classList.remove('-translate-x-full');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+  </script>
 </body>
 </html>
