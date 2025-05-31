@@ -49,29 +49,40 @@
       z-index: 1;
     }
 
-    /* Rechte Hälfte - magischer Sternenhintergrund */
-   <style>
-  /* ... dein bestehender Stil ... */
+    /* Rechte Hälfte - lila Hintergrund + Sterne */
+    .right {
+      position: relative;
+      z-index: 10;
+      overflow-x: hidden;
+      background-color: #6a4b8c; /* Lila Hintergrund */
+    }
 
-  .right {
-    position: relative; /* damit z-index funktioniert */
-    z-index: 10; /* Inhalt liegt über den Sternen */
-    overflow-x: hidden;
-  }
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 50%; /* Sterne nur rechts */
+      width: 50vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 5; /* unterhalb Inhalt, über Body */
+      background: transparent;
+      overflow: hidden;
+    }
 
-  .stars {
-    position: fixed;
-    top: 0;
-    left: 50%;  /* rechte Hälfte */
-    width: 50vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 5;  /* hinter dem Inhalt aber vor dem Body */
-    background: transparent;
-  }
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle linear infinite;
+    }
 
-  /* ... restlicher CSS-Code ... */
-
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
 
     /* Menü-Schaltflächen */
     .menu-button {
@@ -148,34 +159,6 @@
       background: linear-gradient(to bottom, #fff, #888, #fff);
       opacity: 0.3;
       z-index: 10;
-    }
-
-    /* Sterne Hintergrund (für rechte Hälfte) */
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 50%; /* Sternenhintergrund nur rechts */
-      width: 50vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-      background: transparent;
-    }
-
-    .star {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background-color: white;
-      border-radius: 50%;
-      opacity: 0;
-      animation: twinkle linear infinite;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
     }
 
     /* Responsive Anpassung */
@@ -258,7 +241,7 @@
   <!-- Sterne Hintergrund rechts -->
   <div class="stars"></div>
 
-  <!-- JavaScript für Menüs -->
+  <!-- JavaScript für Menüs und Sterne -->
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
@@ -268,13 +251,11 @@
     // Sterne erzeugen rechts
     document.addEventListener("DOMContentLoaded", function () {
       const starContainer = document.querySelector(".stars");
-      const vw = window.innerWidth / 2; // Hälfte der Breite
       for (let i = 0; i < 50; i++) {
         const star = document.createElement("div");
         star.className = "star";
-        // Positionierung nur im rechten Bereich (50% bis 100%)
         star.style.top = Math.random() * 100 + "vh";
-        star.style.left = (Math.random() * 50 + 50) + "vw";
+        star.style.left = (Math.random() * 50 + 50) + "vw"; // rechts (50% bis 100%)
         star.style.animationDuration = (Math.random() * 2 + 1) + "s";
         starContainer.appendChild(star);
       }
