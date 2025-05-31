@@ -1,46 +1,276 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <link rel="icon" type="favicon.ico" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Bücher</title>
+    <title>Meine Bücher | Lilian’s Witchy World</title>
     <style>
+        body {
+            font-family: Garamond, serif;
+            color: white;
+            background-color:black;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+   /* Sterne Hintergrund */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Verhindert, dass die Sterne mit anderen Elementen interagieren */
+            z-index: -1; /* Sterne bleiben im Hintergrund */
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        
+         .navbar {
+            background-color: #0aa667;
+            padding: 10px 20px; /* Schmaler Balken */
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
+            align-items: center;
+        }
+
+        .navmenu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .navmenu li {
+            margin-right: 30px;
+            position: relative; /* Für Dropdown-Menüs */
+        }
+
+        .navmenu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+        }
+
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
+
+        /* Dropdown-Menü */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
+
+        .navmenu li:hover .dropdown-content {
+            display: block;
+        }
         .book {
             margin-bottom: 20px;
+            display: inline-block;
+            width: 250px;
+            margin-right: 20px;
+            background-color: #660082;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
         .book img {
-            width: 150px; /* Oder eine andere Größe je nach Bedarf */
+            width: 100%;
             height: auto;
+            border-radius: 10px;
         }
         .book a {
             text-decoration: none;
-            color: #000;
+            color: #fff;
+        }
+        .book p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .contact-form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #660082;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #0aa667;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Meine Bücher</h1>
+
+
+<div class="stars"></div>
+    
+    <h1>
+        <img src="witchylogo.png" alt="Lilian's Witchy World Logo">
+        Lilian’s Witchy World
+    </h1>
+    
+    <p>Willkommen in der magischen Welt von Lilian. Hier findest du meine Bücher, Zauber und vieles mehr.</p>
+
+    <!-- Navbar -->
+ 
+
+      <div class="navbar">
+            <ul class="navmenu">
+                <li class="dropdown">
+                    <a href="index.html">Startseite</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Über mich</a></li>
+                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                        <li><a href="meinemission.html">Meine Mission</a></li>
+                    </ul>
+                </li>
+                <li><a href="angebote.html">Meine Angebote</a></li>
+                <li class="dropdown">
+                    <a href="energie.html">Energetische Selbstarbeit</a>
+                    <ul class="dropdown-content">
+                        <li><a href="basics.html">Die Basics</a></li>
+                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                    </ul>
+                </li>
+                <li><a href="meinebücher.html">Meine Bücher</a></li>
+                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                <li class="dropdown">
+                    <a href="rezepte.html">Rezepte ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                        <li><a href="haare.html">Haarprodukte</a></li>
+                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                        <li><a href="#">Räuchermischungen</a></li>
+                        <li><a href="#">Naturheilkunde</a></li>
+                        <li><a href="#">Salben & Balsam</a></li>
+                    </ul>
+                </li>
+                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="agb.html">AGB</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
+
+    <!-- Bücher -->
+    <h2>Meine Bücher</h2>
 
     <div class="book">
-        <a href="https://link-zur-verkaufsseite-1.com" target="_blank">
-            <img src="images/buchcover1.jpg" alt="Buchcover 1">
-            <p>Buch 1: Titel des Buches</p>
+        <a href="https://www.amazon.de/Traumreisen-mit-Baldur-Einschlafgeschichten-Jahren-ebook/dp/B0DL5ZX1GS?crid=2GVW48M8NGZ10&dib=eyJ2IjoiMSJ9.kK9p30exQdp-2R2QvMCVkcYmKEGtNyNuKws0Y1iFuAD5Owm9dqxyMHln7gtuP_-3jU9gYvaQ71rRtB3RoqB7GTX_Cw8omerXiJbaH9640qhjgXvJCsB9VeI52tRn3vQ-XzSYkIkIi-SB1Gl8FQ5GJQ.lVwFqjfLI_3hGe8gWJ843I8Tt_W7B7esjhawIzRz6vQ&dib_tag=se&keywords=traumreisen+mit+baldur&qid=1742061812&sprefix=traumreisen+mit%2Caps%2C185&sr=8-1" target="_blank">
+            <img src="baldur1.png" alt="Baldur 1">
+            <p>Buch 1: Traumreisen mit Baldur, Band 1</p>
         </a>
     </div>
 
     <div class="book">
-        <a href="https://link-zur-verkaufsseite-2.com" target="_blank">
-            <img src="images/buchcover2.jpg" alt="Buchcover 2">
-            <p>Buch 2: Titel des Buches</p>
-        </a>
-    </div>
+         <a href="https://www.amazon.de/Traumreisen-mit-Baldur-Einschlafgeschichten-9-Jährige/dp/B0DTK95QHZ?crid=2GVW48M8NGZ10&dib=eyJ2IjoiMSJ9.kK9p30exQdp-2R2QvMCVkcYmKEGtNyNuKws0Y1iFuAD5Owm9dqxyMHln7gtuP_-3jU9gYvaQ71rRtB3RoqB7GTX_Cw8omerXiJbaH9640qhjgXvJCsB9VeI52tRn3vQ-XzSYkIkIi-SB1Gl8FQ5GJQ.lVwFqjfLI_3hGe8gWJ843I8Tt_W7B7esjhawIzRz6vQ&dib_tag=se&keywords=traumreisen+mit+baldur&qid=1742061812&sprefix=traumreisen+mit%2Caps%2C185&sr=8-4" target="_blank">
+             <img src="baldur2.png" alt="Baldur 2">
+             <p>Buch 2: Traumreisen mit Baldur, Band 2</p>
+         </a>
+     </div>
+
+     <div class="book">
+          <p>Band 3 ist in Arbeit ...</p>
+             <p>Buch 3 Traumreisen mit Baldur</p>
+         </a>
+     </div>
 
     <div class="book">
-        <a href="https://link-zur-verkaufsseite-3.com" target="_blank">
-            <img src="images/buchcover3.jpg" alt="Buchcover 3">
-            <p>Buch 3: Titel des Buches</p>
-        </a>
-    </div>
+         <a href="https://www.amazon.de/dp/B0F1DDHPLT?__mk_de_DE=ÅMÅŽÕÑ&crid=1OG7NC3Z1XEWK&dib=eyJ2IjoiMSJ9.c0adbYXWyXDO-f4vuLPkDcJpkEuOFAVkkezwquuP-LWRovPJrksV4kExbLRXvXrVGGNaNjpd3KxJ73QTrgoTKQEUUlYCUc29vy7ANSGNB1spdbksjiHceZ4S6TM7d9RKsdmreFqWL3ZAuGu-oP_dcP8NkzgZPSoC5JLWSsqY6Tz2nCDhrYifnWMuiE4DKQqymERAnTQaFueftD7ZruV0eFPySZbrURc_k5g-5Ryw7is.hXB5RZXVXK_X0PY4sYTJLr0P_wQKYmZQdRtc8L_Y60Q&dib_tag=se&keywords=traumreisen+erwachsene+elisabeth-ann&qid=1742061834&sprefix=traumreisen+erwachsene+elisabeth-ann%2Caps%2C102&sr=8-1" target="_blank">
+             <img src="traumrerw.png" alt="Traumreisen Erwachsene">
+             <p>Buch 3: Bewusste und achtsame Traumreisen für Erwachsene</p>
+         </a>
+     </div>
 
+
+     <div class="book">
+            <p>Buch noch in Arbeit</p>
+             <p>Traumreisen für Erwachsene, ein Special</p>
+         </a>
+     </div>
+
+    
+    <!-- Weitere Bücher ... -->
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+// Sterne erzeugen
+        document.addEventListener("DOMContentLoaded", function() {
+            let starContainer = document.querySelector(".stars");
+            for (let i = 0; i < 50; i++) { // Anzahl der Sterne
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = Math.random() * 100 + "vh"; // Zufällige Höhe
+                star.style.left = Math.random() * 100 + "vw"; // Zufällige Position
+                star.style.animationDuration = (Math.random() * 2 + 1) + "s"; // Zufällige Leuchtdauer
+                starContainer.appendChild(star);
+            }
+        });
+
+        
+    </script>
 </body>
 </html>
