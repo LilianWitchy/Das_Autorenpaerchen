@@ -1,20 +1,13 @@
-<!DOCTYPE html>More actions
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DAS Autorenpärchen</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     /* Grundlegendes Layout */
     body {
-    body 
-
-<div class="top-title">DAS Autorenpärchen</div>
-<div class="top-photo">
-  <img src="autorenpaar.jpg" alt="Autorenpaar" />
-</div>
-    
-    {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
@@ -33,7 +26,6 @@
       position: relative;
     }
 
-    /* Linke Hälfte - Hintergrundbild universum.jpg mit Overlay */
     .left {
       background: url('universum.jpg') no-repeat center center;
       background-size: cover;
@@ -41,39 +33,38 @@
       color: #f5f5f5;
     }
 
-    /* Halbtransparentes Overlay für bessere Lesbarkeit */
     .left::before {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-color: rgba(0, 0, 0, 0.6);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* Text und Inhalte über dem Overlay */
     .left > * {
       position: relative;
       z-index: 1;
     }
 
-    /* Rechte Hälfte - lila Hintergrund + Sterne */
     .right {
       position: relative;
       z-index: 10;
       overflow-x: hidden;
-      background-color: #6a4b8c; /* Lila Hintergrund */
+      background-color: #6a4b8c;
     }
-  <link rel="stylesheet" href="styles.css" />
 
     .stars {
       position: fixed;
       top: 0;
-      left: 50%; /* Sterne nur rechts */
+      left: 50%;
       width: 50vw;
       height: 100vh;
       pointer-events: none;
-      z-index: 5; /* unterhalb Inhalt, über Body */
+      z-index: 5;
       background: transparent;
       overflow: hidden;
     }
@@ -93,7 +84,6 @@
       50% { opacity: 1; }
     }
 
-    /* Menü-Schaltflächen */
     .menu-button {
       position: absolute;
       top: 1rem;
@@ -132,7 +122,7 @@
 
     .menu a:hover {
       text-decoration: underline;
-      color: #ffd700; /* goldene Farbe als Hover */
+      color: #ffd700;
     }
 
     .left .menu {
@@ -159,7 +149,6 @@
       opacity: 0.8;
     }
 
-    /* Trennlinie */
     .divider {
       position: absolute;
       left: 50%;
@@ -170,18 +159,20 @@
       z-index: 10;
     }
 
-    /* Responsive Anpassung */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
       }
+
       .half {
         width: 100%;
         height: auto;
       }
+
       .divider {
         display: none;
       }
+
       .stars {
         left: 0;
         width: 100vw;
