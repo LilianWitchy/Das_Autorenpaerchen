@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DAS Autorenpärchen</title>
   <style>
-    /* Grundlayout */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -15,16 +14,10 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       color: white;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      min-height: 100vh;
-      overflow-x: hidden;
       background-color: #000;
-      position: relative;
+      overflow-x: hidden;
     }
 
-    /* Überschrift */
     .headline {
       width: 100%;
       text-align: center;
@@ -34,13 +27,23 @@
       font-weight: bold;
       color: #ffd700;
       letter-spacing: 1px;
-      margin-bottom: 1rem;
+    }
+
+    .intro-text {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
     }
 
     .half {
       width: 50%;
       padding: 2rem;
-      background-color: #6a4b8c;
       position: relative;
     }
 
@@ -68,14 +71,12 @@
     }
 
     .menu-button {
-      position: relative;
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid white;
       color: white;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
       cursor: pointer;
-      z-index: 10;
     }
 
     .menu {
@@ -84,7 +85,6 @@
       padding: 1rem;
       display: none;
       margin-bottom: 1.5rem;
-      z-index: 10;
     }
 
     .menu a {
@@ -115,20 +115,11 @@
       opacity: 0.8;
     }
 
-    .divider {
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(to right, #fff, #888, #fff);
-      opacity: 0.3;
-      margin: 1rem 0;
-    }
-
     img {
       max-width: 100%;
       height: auto;
     }
 
-    /* Link-Buttons */
     .footer-button {
       position: absolute;
       bottom: 20px;
@@ -139,7 +130,6 @@
       text-decoration: none;
       font-size: 0.95rem;
       transition: background-color 0.3s ease;
-      z-index: 5;
     }
 
     .footer-button:hover {
@@ -154,32 +144,14 @@
       right: 20px;
     }
 
-    /* Responsive */
     @media (max-width: 1024px) {
-      .half {
-        width: 100%;
-        padding: 1.5rem;
-      }
-
-      body {
+      .container {
         flex-direction: column;
       }
 
-      h1 {
-        font-size: 1.5em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-
-      .menu-button {
-        padding: 0.4rem 0.8rem;
-        font-size: 1em;
-      }
-
-      .menu a {
-        font-size: 1em;
+      .half {
+        width: 100%;
+        padding: 1.5rem;
       }
 
       .footer-button {
@@ -193,70 +165,64 @@
 </head>
 <body>
 
-  <!-- Überschrift -->
   <div class="headline">DAS Autorenpärchen</div>
-  <p>Bereits in Liebe vereint. Nun auch im Schreiben eine gemeinsame Leidenschaft gefunden.</p>
-  <p>Diese Seite ist noch mitten im Aufbau und wird von mir selbst programmiert. Deshalb verzeiht mir bitte Fehler.</p>
-
-  <!-- Linke Hälfte -->
-  <div class="half left">
-    <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
-    <div class="menu" id="menu-left">
-      <a href="index.html">Startseite</a>
-      <a href="about2.html">Über mich</a>
-      <a href="meinebücher2.html">Meine Werke</a>
-      <a href="termine2.html">Termine / Veranstaltungen</a>
-      <a href="agb2.html">AGB</a>
-      <a href="kontakt2-html">Kontakt</a>
-      <a href="impressum2.html">Impressum</a>
-    </div>
-    <h1>Er: T.Ben Talion – Autor einer Dark Fantasy Reihe</h1>
-    <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
-    <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
-    <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
-    <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
-
-    <!-- Button für ihn -->
-    <a href="https://lilianwitchy.github.io/Ben-Talions-World/" class="footer-button left-button" target="_blank">Meine eigene Webseite</a>
+  <div class="intro-text">
+    <p>Bereits in Liebe vereint. Nun auch im Schreiben eine gemeinsame Leidenschaft gefunden.</p>
+    <p>Diese Seite ist noch mitten im Aufbau und wird von mir selbst programmiert. Deshalb verzeiht mir bitte Fehler.</p>
   </div>
 
-  <p>Mit Besuch dieser Webseite, werden die AGB akzeptiert.</p>
-
-  <!-- Rechte Hälfte -->
-  <div class="half right">
-    <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
-    <div class="menu" id="menu-right">
-      <a href="index.html">Startseite</a>
-      <a href="about1.html">Über mich</a>
-      <a href="meinebücher1.html">Meine Werke</a>
-      <a href="termine1.html">Termine / Veranstaltungen</a>
-      <a href="agb1.html">AGB</a>
-      <a href="kontakt1.html">Kontakt</a>
-      <a href="impressum1.html">Impressum</a>
-    </div>
-    <h1>Sie: Elisabeth-Ann Wolf – Achtsame und bewusste Traumreisen</h1>
-    <p class="intro">Sie schreibt Worte wie fließendes Licht – achtsam, heilend, intuitiv.</p>
-    <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder Einschlafgeschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
-    <p>Bei den Büchern für die Kinder übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
-
-    <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
-      <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-      <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können.</p>
-      <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
-      <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten.</p>
-      <p>Wie Kerry K. sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun.</p>
-      <p><strong>Von Herzen, Lilian</strong></p>
-      <img src="relax.png" alt="Relaxbild" />
+  <div class="container">
+    <!-- Linke Hälfte – Er -->
+    <div class="half left">
+      <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
+      <div class="menu" id="menu-left">
+        <a href="index.html">Startseite</a>
+        <a href="about2.html">Über mich</a>
+        <a href="meinebücher2.html">Meine Werke</a>
+        <a href="termine2.html">Termine / Veranstaltungen</a>
+        <a href="agb2.html">AGB</a>
+        <a href="kontakt2.html">Kontakt</a>
+        <a href="impressum2.html">Impressum</a>
+      </div>
+      <h1>Er: T.Ben Talion – Autor einer Dark Fantasy Reihe</h1>
+      <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
+      <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
+      <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
+      <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
+      <a href="https://lilianwitchy.github.io/Ben-Talions-World/" class="footer-button left-button" target="_blank">Meine eigene Webseite</a>
     </div>
 
-    <!-- Button für sie -->
-    <a href="https://lilians-witchy-world.com/" class="footer-button right-button" target="_blank">Meine eigene Webseite</a>
+    <!-- Rechte Hälfte – Sie -->
+    <div class="half right">
+      <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
+      <div class="menu" id="menu-right">
+        <a href="index.html">Startseite</a>
+        <a href="about1.html">Über mich</a>
+        <a href="meinebücher1.html">Meine Werke</a>
+        <a href="termine1.html">Termine / Veranstaltungen</a>
+        <a href="agb1.html">AGB</a>
+        <a href="kontakt1.html">Kontakt</a>
+        <a href="impressum1.html">Impressum</a>
+      </div>
+      <h1>Sie: Elisabeth-Ann Wolf – Achtsame und bewusste Traumreisen</h1>
+      <p class="intro">Sie schreibt Worte wie fließendes Licht – achtsam, heilend, intuitiv.</p>
+      <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder Einschlafgeschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
+      <p>Bei den Büchern für die Kinder übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
+      <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
+        <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
+        <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können.</p>
+        <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
+        <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten.</p>
+        <p>Wie Kerry K. sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun.</p>
+        <p><strong>Von Herzen, Lilian</strong></p>
+        <img src="relax.png" alt="Relaxbild" />
+      </div>
+      <a href="https://lilians-witchy-world.com/" class="footer-button right-button" target="_blank">Meine eigene Webseite</a>
+    </div>
   </div>
 
-<p>Mit Besuch dieser Webseite, werden die AGB akzeptiert.</p>
+  <div class="intro-text"><p>Mit Besuch dieser Webseite, werden die AGB akzeptiert.</p></div>
 
-
-  
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
