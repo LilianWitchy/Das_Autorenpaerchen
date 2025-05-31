@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über den Autor</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Konfiguration für benutzerdefinierte Farben (optional) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#facc15', // Gelb für Text und Umrandung
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-black text-white font-sans relative">
+
+  <!-- Hintergrundbild -->
+  <div class="fixed inset-0 z-0">
+    <img src="universum.jpg" alt="Universum Hintergrund" class="object-cover w-full h-full opacity-20">
+  </div>
+
+  <!-- Mobile Menü Button -->
+  <div class="md:hidden p-4 z-20 relative">
+    <button id="menuButton" class="text-primary border border-primary px-3 py-1 rounded">
+      ☰ Menü
+    </button>
+  </div>
+
+  <!-- Menü -->
+  <aside id="sidebar" class="bg-black bg-opacity-70 p-4 space-y-2 fixed top-0 left-0 h-full w-60 z-10 transform -translate-x-full md:translate-x-0 md:static md:block transition-transform duration-300 ease-in-out">
+    <h2 class="text-xl font-bold text-primary mb-4">Menü</h2>
+    <nav class="flex flex-col space-y-2">
+      <a href="index.html" class="hover:text-primary">Startseite</a>
+      <a href="about.html" class="hover:text-primary">Über mich</a>
+      <a href="meinebücher2.html" class="hover:text-primary">Meine Werke</a>
+      <a href="termine2.html" class="hover:text-primary">Termine</a>
+      <a href="agb2.html" class="hover:text-primary">AGB</a>
+      <a href="kontakt2.html" class="hover:text-primary">Kontakt</a>
+      <a href="impressum2.html" class="hover:text-primary">Impressum</a>
+    </nav>
+  </aside>
+
+  <!-- Hauptinhalt -->
+  <main class="p-6 md:ml-60 relative z-10 transition-all">
+    <!-- Autorenbild -->
+    <div class="flex justify-center mb-6">
+      <img src="schatzi.jpg" alt="Autor" class="w-48 sm:w-64 h-auto rounded-full shadow-lg border-4 border-primary">
+    </div>
+
+    <!-- Textbereich -->
+    <section class="max-w-3xl mx-auto bg-black bg-opacity-70 p-6 rounded-lg shadow-lg">
+      <p class="text-lg mb-6">
+        Ich bin wie jeder andere meiner Spezies aus einem Ei geschlüpft.
+      </p>
+
+      <p class="text-lg mb-6">
+        In der 11. Klasse hatte ich in beiden Halbjahren eine 5 in Deutsch auf dem Zeugnis zu stehen. Deswegen wollte ich Autor werden – um die Welt mit meiner schrecklichen Rechtschreibung und Ausdrucksweise zu unterjochen.
+      </p>
+
+      <p>Wenigstens bin ich in Englisch so gut, dass ich meine Bücher und die meiner Frau selbständig ins Englische übersetzt habe.</p>
+      <p>Und ganz so schlecht kann mein Deutsch nicht sein, da ich auch Lektorrat anbiete, also bei Interesse einfach melden. :)</p>
+
+      <h3 class="text-xl font-semibold text-primary mt-6 mb-2">Stationen meines Lebens:</h3>
+      <ul class="list-disc list-inside space-y-1 text-white text-base">
+        <li>Bürokaufmann</li>
+        <li>Studium Soziologie</li>
+        <li>Leitung eines Abgeordnetenbüros</li>
+        <li>Weiterbildung zur Buchhaltungsfachkraft</li>
+        <li>Senior IT Analyst</li>
+        <li>Intensiv Care Officer</li>
+        <li>Weiterbildung Data Analyst – Python</li>
+        <li>Autor</li>
+      </ul>
+    </section>
+
+    <!-- Impressum -->
+    <section class="max-w-3xl mx-auto bg-black bg-opacity-70 p-6 mt-10 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary mb-4">Kontakt</h2>
+
+  
+
+       <div class="contact-container" id="kontakt">
+        <h2>Kontakt</h2>
+        <p class="contact-text">
+            Schön, dass du hier bist! 
+          Suchst du wen fürs Lektorat, Übersetzung ins Englisch.
+          Oder möchtest mehr über meine Bücher erfahren. Dann schreib mir gerne eine E-Mail.
+            
+        </p>
+<a href="https://www.instagram.com/tb_talion/" target="_blank">
+    <button style="background-color: #E1306C; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+        <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle;">
+        Folge mir auf Instagram
+    </button>
+</a>
+
+<a href="https://www.instagram.com/das_autorenpaerchen/" target="_blank">
+    <button style="background-color: #E1306C; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+        <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle;">
+        Folge mir auf Instagram
+    </button>
+</a>
+
+
+<p>Möchtest du mehr über meine Arbeit, kommende Bücher und spannende Projekte erfahren? Dann schreibe mir einfach eine E-Mail.</p>
+ <p>ben_talion@proton.me</p>
+  <p style="font-size: small;">
+    
+    Mit dem Absenden erklärst du dich mit der Speicherung deiner E-Mail-Adresse zum Zweck des Newsletter-Versands einverstanden.
+    <a href="/agb.html">Mehr erfahren</a>
+  </p>
+</form>
+  </main>
+
+  <!-- JavaScript für mobiles Menü -->
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+
+    menuButton.addEventListener('click', () => {
+      if (sidebar.classList.contains('-translate-x-full')) {
+        sidebar.classList.remove('-translate-x-full');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+  </script>
+</body>
+</html>
