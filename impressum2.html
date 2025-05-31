@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum | Lilian´s Witchy World</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Konfiguration für benutzerdefinierte Farben (optional) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#facc15', // Gelb für Text und Umrandung
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-black text-white font-sans relative">
+
+  <!-- Hintergrundbild -->
+  <div class="fixed inset-0 z-0">
+    <img src="universum.jpg" alt="Universum Hintergrund" class="object-cover w-full h-full opacity-20" />
+  </div>
+
+  <!-- Mobile Menü Button -->
+  <div class="md:hidden p-4 z-20 relative">
+    <button id="menuButton" class="text-primary border border-primary px-3 py-1 rounded">
+      ☰ Menü
+    </button>
+  </div>
+
+  <!-- Menü -->
+  <aside id="sidebar" class="bg-black bg-opacity-70 p-4 space-y-2 fixed top-0 left-0 h-full w-60 z-10 transform -translate-x-full md:translate-x-0 md:static md:block transition-transform duration-300 ease-in-out">
+    <h2 class="text-xl font-bold text-primary mb-4">Menü</h2>
+    <nav class="flex flex-col space-y-2">
+      <a href="index.html" class="hover:text-primary">Startseite</a>
+      <a href="about.html" class="hover:text-primary">Über mich</a>
+      <a href="meinebücher2.html" class="hover:text-primary">Meine Werke</a>
+      <a href="termine2.html" class="hover:text-primary">Termine</a>
+      <a href="agb2.html" class="hover:text-primary">AGB</a>
+      <a href="kontakt2.html" class="hover:text-primary">Kontakt</a>
+      <a href="impressum2.html" class="hover:text-primary">Impressum</a>
+    </nav>
+  </aside>
+
+  <!-- Hauptinhalt -->
+  <main class="p-6 md:ml-60 relative z-10 transition-all max-w-3xl mx-auto bg-black bg-opacity-70 rounded-lg shadow-lg mt-6 mb-12">
+    
+    <h1 class="text-primary text-3xl font-bold mb-6 text-center">Impressum</h1>
+
+    <section class="text-white text-base space-y-4">
+      <p><strong>Angaben gemäß § 5 TMG:</strong></p>
+      <address class="not-italic">
+        Stefan Lübke (Autorenname: T.Ben Talion)<br />
+        Landsberger Str. 81<br />
+        04157 Leipzig<br />
+        Deutschland
+      </address>
+
+      <p><strong>Kontakt:</strong><br />
+        Telefon: <br />
+        E-Mail: <a ben_talion@proton.me</a>
+      </p>
+
+      <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br />
+        T.Ben Talion (Autorenname), Landsberger Str. 81, 04157 Leipzig
+      </p>
+
+      <p><strong>Haftungsausschluss (Disclaimer):</strong><br />
+        Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+      </p>
+
+      <p><strong>Urheberrecht:</strong><br />
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- JavaScript für mobiles Menü -->
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const sidebar = document.getElementById('sidebar');
+
+    menuButton.addEventListener('click', () => {
+      sidebar.classList.toggle('-translate-x-full');
+    });
+  </script>
+</body>
+</html>
