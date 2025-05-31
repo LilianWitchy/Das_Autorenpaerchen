@@ -20,14 +20,15 @@
       flex-wrap: wrap;
       min-height: 100vh;
       overflow-x: hidden;
-      background-color: #000; /* Falls du eine Hintergrundfarbe möchtest */
+      background-color: #000;
+      position: relative;
     }
 
-    /* Überschrift „DAS Autorenpärchen“ */
+    /* Überschrift */
     .headline {
       width: 100%;
       text-align: center;
-      background-color: #013220; /* Dunkelgrün */
+      background-color: #013220;
       padding: 1.5rem 1rem;
       font-size: 2.2em;
       font-weight: bold;
@@ -40,13 +41,13 @@
       width: 50%;
       padding: 2rem;
       background-color: #6a4b8c;
+      position: relative;
     }
 
     .left {
       background: url('universum.jpg') no-repeat center center;
       background-size: cover;
       color: #f5f5f5;
-      position: relative;
     }
 
     .left::before {
@@ -127,7 +128,33 @@
       height: auto;
     }
 
-    /* Responsive Anpassungen */
+    /* Link-Buttons */
+    .footer-button {
+      position: absolute;
+      bottom: 20px;
+      padding: 0.6rem 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background-color 0.3s ease;
+      z-index: 5;
+    }
+
+    .footer-button:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .left-button {
+      left: 20px;
+    }
+
+    .right-button {
+      right: 20px;
+    }
+
+    /* Responsive */
     @media (max-width: 1024px) {
       .half {
         width: 100%;
@@ -154,15 +181,22 @@
       .menu a {
         font-size: 1em;
       }
+
+      .footer-button {
+        position: static;
+        display: block;
+        margin: 1rem auto 0;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Überschrift mittig, dunkelgrüner Hintergrund -->
+  <!-- Überschrift -->
   <div class="headline">DAS Autorenpärchen</div>
-  <p> Bereits in Liebe vereint. Nun auch im Schreiben eine gemeinsame Leidenschaft gefunden. </p>
-  <p> Diese Seite ist noch mitten im Aufbau und wird von mir selbst programmiert. Deshalb verzeiht mir bitte Fehler.  </p>
+  <p>Bereits in Liebe vereint. Nun auch im Schreiben eine gemeinsame Leidenschaft gefunden.</p>
+  <p>Diese Seite ist noch mitten im Aufbau und wird von mir selbst programmiert. Deshalb verzeiht mir bitte Fehler.</p>
 
   <!-- Linke Hälfte -->
   <div class="half left">
@@ -181,7 +215,12 @@
     <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
     <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
     <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
+
+    <!-- Button für ihn -->
+    <a href="https://lilianwitchy.github.io/Ben-Talions-World/" class="footer-button left-button" target="_blank">Meine eigene Webseite</a>
   </div>
+
+  <p>Mit Besuch dieser Webseite, werden die AGB akzeptiert.</p>
 
   <!-- Rechte Hälfte -->
   <div class="half right">
@@ -203,18 +242,21 @@
     <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
       <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
       <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können.</p>
-
       <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
-
       <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten.</p>
-
       <p>Wie Kerry K. sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun.</p>
-
       <p><strong>Von Herzen, Lilian</strong></p>
       <img src="relax.png" alt="Relaxbild" />
     </div>
+
+    <!-- Button für sie -->
+    <a href="https://lilians-witchy-world.com/" class="footer-button right-button" target="_blank">Meine eigene Webseite</a>
   </div>
 
+<p>Mit Besuch dieser Webseite, werden die AGB akzeptiert.</p>
+
+
+  
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
