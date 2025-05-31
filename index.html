@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DAS Autorenpärchen</title>
   <style>
-    /* Grundlayout */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -16,16 +15,32 @@
       font-family: 'Segoe UI', sans-serif;
       color: white;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
       min-height: 100vh;
       overflow-x: hidden;
+      background-color: #000; /* Hintergrundfarbe */
+    }
+
+    .headline {
+      text-align: center;
+      background: linear-gradient(to right, #4b0082, #6a4b8c, #4b0082);
+      padding: 1.5rem 1rem;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #ffd700;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
     }
 
     .half {
       width: 50%;
       padding: 2rem;
-      background-color: #6a4b8c;
     }
 
     .left {
@@ -113,88 +128,81 @@
       height: auto;
     }
 
-    /* Responsive Anpassungen */
+    /* Responsive */
     @media (max-width: 1024px) {
       .half {
         width: 100%;
         padding: 1.5rem;
       }
 
-      body {
+      .container {
         flex-direction: column;
       }
 
-      h1 {
-        font-size: 1.5em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-
-      .menu-button {
-        padding: 0.4rem 0.8rem;
-        font-size: 1em;
-      }
-
-      .menu a {
-        font-size: 1em;
+      .headline {
+        font-size: 1.8em;
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Linke Hälfte -->
-  <div class="half left">
-    <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
-    <div class="menu" id="menu-left">
-      <a href="index.html">Startseite</a>
-      <a href="about2.html">Über mich</a>
-      <a href="meinebücher2.html">Meine Werke</a>
-      <a href="termine2.html">Termine / Veranstaltungen</a>
-      <a href="agb2.html">AGB</a>
-      <a href="kontakt2-html">Kontakt</a>
-      <a href="impressum2.html">Impressum</a>
+
+  <!-- Überschrift über beiden Spalten -->
+  <div class="headline">DAS Autorenpärchen</div>
+
+  <!-- Inhalt in zwei Hälften -->
+  <div class="container">
+
+    <!-- Linke Hälfte: ER -->
+    <div class="half left">
+      <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
+      <div class="menu" id="menu-left">
+        <a href="index.html">Startseite</a>
+        <a href="about2.html">Über mich</a>
+        <a href="meinebücher2.html">Meine Werke</a>
+        <a href="termine2.html">Termine / Veranstaltungen</a>
+        <a href="agb2.html">AGB</a>
+        <a href="kontakt2-html">Kontakt</a>
+        <a href="impressum2.html">Impressum</a>
+      </div>
+      <h1>Er: T.Ben Talion – Autor einer Dark Fantasy Reihe</h1>
+      <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
+      <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
+      <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
+      <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
     </div>
-    <h1>Er: T.Ben Talion – Autor einer Dark Fantasy Reihe</h1>
-    <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
-    <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
-    <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
-    <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
+
+    <!-- Rechte Hälfte: SIE -->
+    <div class="half right">
+      <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
+      <div class="menu" id="menu-right">
+        <a href="index.html">Startseite</a>
+        <a href="about1.html">Über mich</a>
+        <a href="meinebücher1.html">Meine Werke</a>
+        <a href="termine1.html">Termine / Veranstaltungen</a>
+        <a href="agb1.html">AGB</a>
+        <a href="kontakt1.html">Kontakt</a>
+        <a href="impressum1.html">Impressum</a>
+      </div>
+      <h1>Sie: Elisabeth-Ann Wolf – Achtsame und bewusste Traumreisen</h1>
+      <p class="intro">Sie schreibt Worte wie fließendes Licht – achtsam, heilend, intuitiv.</p>
+      <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder Einschlafgeschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
+      <p>Bei den Büchern für die Kinder übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
+
+      <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
+        <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
+        <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können.</p>
+        <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
+        <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten.</p>
+        <p>Wie Kerry K. sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun.</p>
+        <p><strong>Von Herzen, Lilian</strong></p>
+        <img src="relax.png" alt="Relaxbild" />
+      </div>
+    </div>
   </div>
 
-  <!-- Rechte Hälfte -->
-  <div class="half right">
-    <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
-    <div class="menu" id="menu-right">
-      <a href="index.html">Startseite</a>
-      <a href="about1.html">Über mich</a>
-      <a href="meinebücher1.html">Meine Werke</a>
-      <a href="termine1.html">Termine / Veranstaltungen</a>
-      <a href="agb1.html">AGB</a>
-      <a href="kontakt1.html">Kontakt</a>
-      <a href="impressum1.html">Impressum</a>
-    </div>
-    <h1>Sie: Elisabeth-Ann Wolf – Achtsame und bewusste Traumreisen</h1>
-    <p class="intro">Sie schreibt Worte wie fließendes Licht – achtsam, heilend, intuitiv.</p>
-    <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder Einschlafgeschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
-    <p>Bei den Büchern für die Kinder übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
-
-    <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
-      <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-      <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können.</p>
-
-      <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
-
-      <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten.</p>
-
-      <p>Wie Kerry K. sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun.</p>
-
-      <p><strong>Von Herzen, Lilian</strong></p>
-      <img src="relax.png" alt="Relaxbild" />
-    </div>
-  </div>
-
+  <!-- Menü-Logik -->
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
