@@ -1,0 +1,37 @@
+/* Hintergrund lila für rechte Hälfte */
+.right {
+  background-color: #6a0dad; /* lila */
+  position: relative;
+  z-index: 10; /* Inhalt liegt über Sternen */
+  overflow-x: hidden;
+}
+
+/* Sterne Hintergrund rechts */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 50vw; /* Rechte Hälfte */
+  width: 50vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  background: transparent;
+  overflow: visible;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 1px white;
+  opacity: 0.7;
+  animation: twinkle 3s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
