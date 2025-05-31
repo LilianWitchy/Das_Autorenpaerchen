@@ -1,16 +1,16 @@
 <!DOCTYPE html>More actions
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DAS Autorenpärchen</title>
   <style>
-    /* Grundlegendes Layout */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       height: 100vh;
+      background: linear-gradient(to right, #0a0a23 50%, #3f2a56 50%);
       color: white;
       overflow: hidden;
       position: relative;
@@ -25,64 +25,37 @@
       position: relative;
     }
 
-    /* Linke Hälfte - Hintergrundbild universum.jpg mit Overlay */
     .left {
-      background: url('universum.jpg') no-repeat center center;
-      background-size: cover;
-      position: relative;
-      color: #f5f5f5;
-    }
-
-    /* Halbtransparentes Overlay für bessere Lesbarkeit */
-    .left::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
       background-color: rgba(0, 0, 0, 0.6);
-      pointer-events: none;
-      z-index: 0;
     }
 
-    /* Text und Inhalte über dem Overlay */
-    .left > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Rechte Hälfte - lila Hintergrund + Sterne */
     .right {
-      position: relative;
-      z-index: 10;
-      overflow-x: hidden;
-      background-color: #6a4b8c; /* Lila Hintergrund */
-    }
-  <link rel="stylesheet" href="styles.css" />
-
-    .stars {
-      position: fixed;
-      top: 0;
-      left: 50%; /* Sterne nur rechts */
-      width: 50vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 5; /* unterhalb Inhalt, über Body */
-      background: transparent;
-      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .star {
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .intro {
+      font-style: italic;
+      opacity: 0.8;
+    }
+
+    .divider {
       position: absolute;
-      width: 3px;
-      height: 3px;
-      background-color: white;
-      border-radius: 50%;
-      opacity: 0;
-      animation: twinkle linear infinite;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0; }
-      50% { opacity: 1; }
+      left: 50%;
+      width: 2px;
+      height: 100vh;
+      background: linear-gradient(to bottom, #fff, #888, #fff);
+      opacity: 0.3;
+      z-index: 1;
     }
 
     /* Menü-Schaltflächen */
@@ -94,7 +67,7 @@
       color: white;
       padding: 0.5rem 1rem;
       cursor: pointer;
-      z-index: 20;
+      z-index: 2;
     }
 
     .left .menu-button {
@@ -112,7 +85,7 @@
       border: 1px solid white;
       padding: 1rem;
       display: none;
-      z-index: 20;
+      z-index: 2;
     }
 
     .menu a {
@@ -124,7 +97,6 @@
 
     .menu a:hover {
       text-decoration: underline;
-      color: #ffd700; /* goldene Farbe als Hover */
     }
 
     .left .menu {
@@ -135,34 +107,6 @@
       right: 1rem;
     }
 
-    h1 {
-      font-size: 2em;
-      margin-bottom: 0.5em;
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-
-    .intro {
-      font-style: italic;
-      opacity: 0.8;
-    }
-
-    /* Trennlinie */
-    .divider {
-      position: absolute;
-      left: 50%;
-      width: 2px;
-      height: 100vh;
-      background: linear-gradient(to bottom, #fff, #888, #fff);
-      opacity: 0.3;
-      z-index: 10;
-    }
-
-    /* Responsive Anpassung */
     @media (max-width: 768px) {
       body {
         flex-direction: column;
@@ -174,11 +118,6 @@
       .divider {
         display: none;
       }
-      .stars {
-        left: 0;
-        width: 100vw;
-        position: fixed;
-      }
     }
   </style>
 </head>
@@ -189,22 +128,19 @@
     <div class="menu" id="menu-left">
       <a href="#">Startseite</a>
       <a href="#">Über mich</a>
-      <a href="index.html">Startseite</a>
-      <a href="#about2.html">Über mich</a>
       <a href="#">Meine Werke</a>
       <a href="#">Termine / Veranstaltungen</a>
       <a href="#">AGB</a>
       <a href="#">Kontakt</a>
       <a href="#">Impressum</a>
-      <a href="agb2.html">AGB</a>
-      <a href="kontakt2-html">Kontakt</a>
-      <a href="impressum2.html">Impressum</a>
     </div>
+    <h1>Er: Dunkle Fantasien</h1>
+    <p class="intro">Er erschafft düstere Welten – voller Schatten, Magie und verlorener Seelen.</p>
+    <p>Seine Geschichten entführen in Universen, in denen Licht rar ist, Hoffnung kostbar und Helden oft scheitern. Dark Fantasy ist für ihn ein Spiegel innerer Konflikte – intensiv, atmosphärisch und kompromisslos.</p>
     <h1>Er: T.Ben Talion Autor einer Dark Fantasy Reihe</h1>
-    <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
+      <p class="intro">Er erschafft Welten – voller Dunkelheit, Magie und Spannung.</p>
     <p>Seine Bücher entführen die Leser in eine Welt voller Licht, Schatten und einer Persönlichkeit, die echt aus sich heraus wächst, in schweren Widrigkeiten.</p>
-    <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
-    <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
+  <p> Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
   </div>
 
   <!-- Rechte Hälfte: Sie -->
@@ -214,64 +150,27 @@
       <a href="#">Startseite</a>
       <a href="#">Über mich</a>
       <a href="#">Meine Werke</a>
-      <a href="index.html">Startseite</a>
-      <a href="about1.html">Über mich</a>
-      <a href="meinebücher1.html">Meine Werke</a>
       <a href="#">Termine / Veranstaltungen</a>
       <a href="#">AGB</a>
       <a href="#">Kontakt</a>
       <a href="#">Impressum</a>
-      <a href="agb1.html">AGB</a>
-      <a href="kontakt1.html">Kontakt</a>
-      <a href="impressum1.html">Impressum</a>
     </div>
+    <h1>Sie: Traumreisen & Magie</h1>
     <h1>Sie: Elisabeth-Ann Wolf Achtsame und bewusste Traumreisen für Erwachsene und Kinder</h1>
     <p class="intro">Sie schreibt Worte wie fließendes Licht – achtsam, heilend, intuitiv.</p>
-    <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder Einschlafgeschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
-    <p>Bei den Büchern für die Kinder übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
-
-    <div style="margin-top:2rem; color:#b0d5ac; font-family: Garamond, serif;">
-      <h2>Willkommen in meiner magischen und zauberhaften Welt!</h2>
-      <p>Unsere Welt ist voller Wunder, verborgen hinter dem Schleier des Alltäglichen. Sie ist magisch und durchzogen von zauberhaften Energien, die weit über das hinausgehen, was unser bloßes Auge sehen oder unsere bekannten Sinne erfassen können. Die Wissenschaft beginnt langsam zu begreifen, was viele Menschen schon lange spüren: Alles ist Energie. Und wenn wir lernen, diese bewusst zu lenken, können wir unser Leben und unsere Umgebung positiv beeinflussen.</p>
-
-      <p>Wir leben in einer Zeit des Erwachens – der Moment ist gekommen, aus der Dunkelheit herauszutreten und das Licht in uns anzuerkennen. In jedem von uns schlummert eine unermessliche Kraft, die darauf wartet, entfesselt zu werden.</p>
-
-      <p>Mit dieser Seite möchte ich dazu inspirieren, neue Wege zu entdecken, Horizonte zu erweitern und das eigene Potenzial zu entfalten. Es gibt so vieles, was möglich ist – wenn wir uns öffnen und den Mut haben, unserer inneren Wahrheit zu folgen.</p>
-
-      <p>Wie Kerry K. so treffend sagt: Die Welle der Veränderung ist längst ins Rollen gekommen. Jeder einzelne von uns, der sein Bewusstsein hebt, inspiriert andere dazu, es ihm gleichzutun. Ein Funke reicht aus, um ein ganzes Feuer der Transformation zu entfachen.</p>
-
-      <p>Nun lass uns gemeinsam Wunder bewirken und neue Wege gehen. Ich danke dir von Herzen, dass du den Weg hierher gefunden hast.</p>
-
-      <p><strong>Von Herzen, Lilian</strong></p>
-      <img src="relax.png" alt="Relaxbild" style="max-width: 100%; height: auto;" />
-    </div>
+    <p>Ihre Texte sind Einladungen in innere Welten. Ob geführte Traumreisen oder poetische Geschichten – sie verbinden Tiefe mit Leichtigkeit, Spiritualität mit Sprache, Magie mit Menschlichkeit.</p>
+    <p>Bei den Büchern für die Kinder, übernimmt ihr Hund die Hauptrolle und verzaubert damit nicht nur die kleinen Leser!</p>
   </div>
 
   <!-- Trennlinie in der Mitte -->
   <div class="divider"></div>
 
-  <!-- Sterne Hintergrund rechts -->
-  <div class="stars"></div>
-
-  <!-- JavaScript für Menüs und Sterne -->
+  <!-- JavaScript für Menüs -->
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
       menu.style.display = (menu.style.display === "block") ? "none" : "block";
     }
-
-    // Sterne erzeugen rechts
-    document.addEventListener("DOMContentLoaded", function () {
-      const starContainer = document.querySelector(".stars");
-      for (let i = 0; i < 50; i++) {
-        const star = document.createElement("div");
-        star.className = "star";
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.left = (Math.random() * 50 + 50) + "vw"; // rechts (50% bis 100%)
-        star.style.animationDuration = (Math.random() * 2 + 1) + "s";
-        starContainer.appendChild(star);
-      }
-    });
   </script>
-</body>More actions
+</body>
 </html>
