@@ -1,94 +1,101 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Talion's World</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Externe CSS-Datei -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ben Talion's World</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Externe CSS-Datei -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white">
-    
-  
- <!-- Menü-Button -->
-<button id="menu-btn" class="menu-button">☰ Menü</button>
+<body class="bg-black text-white font-sans">
 
-<!-- Seitenmenü -->
-<div id="side-menu" class="menu hidden">
-  <a href="index.html">Startseite</a>
-  <a href="#about2.html">Über mich</a>
-  <a href="meinebücher2.html">Meine Werke</a>
-  <a href="termine2.html">Termine / Veranstaltungen</a>
-  <a href="agb2.html">AGB</a>
-  <a href="kontakt2-html">Kontakt</a>
-  <a href="impressum2.html">Impressum</a>
-  <button id="close-btn" class="text-red-500 mt-4">✖ Schließen</button>
-</div>
+  <!-- Menü-Button (mobile only) -->
+  <button id="menu-btn" class="fixed top-4 left-4 z-50 p-2 bg-yellow-500 text-black rounded md:hidden">
+    ☰ Menü
+  </button>
 
+  <!-- Seitenmenü (off-canvas auf Mobile, dauerhaft sichtbar auf Desktop) -->
+  <div id="side-menu" class="fixed inset-y-0 left-0 w-64 bg-gray-900 text-white p-6 space-y-4 transform -translate-x-full transition-transform duration-300 md:translate-x-0 md:static md:block z-40">
+    <a href="index.html" class="block hover:text-yellow-400">Startseite</a>
+    <a href="#about2.html" class="block hover:text-yellow-400">Über mich</a>
+    <a href="meinebücher2.html" class="block hover:text-yellow-400">Meine Werke</a>
+    <a href="termine2.html" class="block hover:text-yellow-400">Termine / Veranstaltungen</a>
+    <a href="agb2.html" class="block hover:text-yellow-400">AGB</a>
+    <a href="kontakt2-html" class="block hover:text-yellow-400">Kontakt</a>
+    <a href="impressum2.html" class="block hover:text-yellow-400">Impressum</a>
+    <button id="close-btn" class="mt-6 text-red-400 md:hidden">✖ Schließen</button>
+  </div>
 
-    <!-- Hauptinhalt -->
-    <div class="flex flex-col items-center text-center p-6">
-       <!-- Header mit Titel und Untertext -->
-<header class="text-center p-6 bg-black bg-opacity-80 w-full">
-    <h1 class="text-4xl font-bold text-yellow-400">Ben Talion's World</h1>
-    <p class="text-lg text-white mt-2">
+  <!-- Hauptinhalt -->
+  <main class="md:ml-64 p-6 space-y-8">
+
+    <!-- Header -->
+    <header class="text-center">
+      <h1 class="text-4xl font-bold text-yellow-400">Ben Talion's World</h1>
+      <p class="text-lg mt-2 text-gray-300">
         Ein Reich zwischen Licht und Schatten, in dem uralte Kraftsteine über das Schicksal entscheiden.<br>
         Hier findest du meine bereits veröffentlichten Bücher.
-    </p>
-</header>
+      </p>
+    </header>
 
-
+    <!-- Bücherübersicht -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
       
-        <!-- Bücher -->
-<div class="mt-6 flex space-x-6">
-    <a href="https://www.amazon.de/Kraftstein-Schatten-T-Ben-Talion/dp/B0DKKVJBKR?_encoding=UTF8&dib_tag=se&dib=eyJ2IjoiMSJ9.uHchWzsFqajzi0KgmByOpLyDwa21aanfcm6pVzVlK36LPfRgpIR1MaPnvJluUz4qV8fk0Gk37h36x2qYvwzFVXKn60Ew3FvvYKtcjf67RFwUy9CbpmdvZJY_FUYe-QrWYfct0O2fjzJUuDO7_gkknd6pzm6oCebvEuL2BEMRbsM1cqr-B1Xkv1_6YtSz7upA.nPhCAwT-KjnR-d4qEinb0RHMHSazlsjyTVAww_Hj1DM&qid=1748696149&sr=1-3" target="_blank" class="text-center">
-        <img src="kraftstein1.jpg" alt="Buch 1: Kraftstein - Licht und Schatten" class="w-48 rounded shadow-lg">
-        <p class="mt-2"><strong>Buch 1: Kraftstein - Licht und Schatten</strong></p>
-    </a>
+      <!-- Buch 1 DE -->
+      <a href="https://www.amazon.de/Kraftstein-Schatten-T-Ben-Talion/dp/B0DKKVJBKR" target="_blank" class="text-center">
+        <img src="kraftstein1.jpg" alt="Buch 1: Kraftstein - Licht und Schatten" class="w-40 sm:w-48 rounded shadow-lg mx-auto">
+        <p class="mt-2 font-semibold">Buch 1: Kraftstein - Licht und Schatten</p>
+      </a>
 
-    <a href="https://www.amazon.de/Power-Stone-Light-Shadow-English-ebook/dp/B0DK55KPXG?__mk_de_DE=ÅMÅŽÕÑ&crid=2G7HG6XWH2X6G&dib=eyJ2IjoiMSJ9.uHchWzsFqajzi0KgmByOpLyDwa21aanfcm6pVzVlK36LPfRgpIR1MaPnvJluUz4qV8fk0Gk37h36x2qYvwzFVXKn60Ew3FvvYKtcjf67RFwUy9CbpmdvZJY_FUYe-QrWYfct0O2fjzJUuDO7_gkknd6pzm6oCebvEuL2BEMRbsM1cqr-B1Xkv1_6YtSz7upA.nPhCAwT-KjnR-d4qEinb0RHMHSazlsjyTVAww_Hj1DM&dib_tag=se&keywords=t.ben+talion&qid=1748696149&s=digital-text&sprefix=t.ben+talion%2Cdigital-text%2C84&sr=1-4" target="_blank" class="text-center">
-        <img src="powerstone1.jpg" alt="Buch 1: Power Stone - Light and Shadow" class="w-48 rounded shadow-lg">
-        <p class="mt-2"><strong>Book 1: Power Stone - Light and Shadow</strong></p>
-    </a>
+      <!-- Buch 1 EN -->
+      <a href="https://www.amazon.de/Power-Stone-Light-Shadow-English-ebook/dp/B0DK55KPXG" target="_blank" class="text-center">
+        <img src="powerstone1.jpg" alt="Book 1: Power Stone - Light and Shadow" class="w-40 sm:w-48 rounded shadow-lg mx-auto">
+        <p class="mt-2 font-semibold">Book 1: Power Stone - Light and Shadow</p>
+      </a>
 
+      <!-- Buch 2 DE -->
+      <a href="https://www.amazon.de/Kraftstein-Rebellion-T-Ben-Talion-ebook/dp/B0F8BKY6WJ" target="_blank" class="text-center">
+        <img src="kraftstein2.jpg" alt="Buch 2: Kraftstein - Rebellion" class="w-40 sm:w-48 rounded shadow-lg mx-auto">
+        <p class="mt-2 font-semibold">Buch 2: Kraftstein - Rebellion</p>
+      </a>
 
-   <a href="https://www.amazon.de/Kraftstein-Rebellion-T-Ben-Talion-ebook/dp/B0F8BKY6WJ?__mk_de_DE=ÅMÅŽÕÑ&crid=2G7HG6XWH2X6G&dib=eyJ2IjoiMSJ9.uHchWzsFqajzi0KgmByOpLyDwa21aanfcm6pVzVlK36LPfRgpIR1MaPnvJluUz4qV8fk0Gk37h36x2qYvwzFVXKn60Ew3FvvYKtcjf67RFwUy9CbpmdvZJY_FUYe-QrWYfct0O2fjzJUuDO7_gkknd6pzm6oCebvEuL2BEMRbsM1cqr-B1Xkv1_6YtSz7upA.nPhCAwT-KjnR-d4qEinb0RHMHSazlsjyTVAww_Hj1DM&dib_tag=se&keywords=t.ben+talion&qid=1748696149&s=digital-text&sprefix=t.ben+talion%2Cdigital-text%2C84&sr=1-1s" target="_blank" class="text-center">
-        <img src="kraftstein2.jpg" alt="Buch 2: Kraftstein - Rebellion" class="w-48 rounded shadow-lg">
-        <p class="mt-2"><strong>Buch 2: Kraftstein - Rebellion</strong></p>
-    </a>
+      <!-- Buch 2 EN -->
+      <a href="https://www.amazon.de/Power-Stone-Rebellion-Ben-Talion-ebook/dp/B0F96NV3MK" target="_blank" class="text-center">
+        <img src="powerstone2.jpg" alt="Book 2: Power Stone - Rebellion" class="w-40 sm:w-48 rounded shadow-lg mx-auto">
+        <p class="mt-2 font-semibold">Book 2: Power Stone - Rebellion</p>
+      </a>
 
-      <a href="https://www.amazon.de/Power-Stone-Rebellion-Ben-Talion-ebook/dp/B0F96NV3MK?__mk_de_DE=ÅMÅŽÕÑ&crid=2G7HG6XWH2X6G&dib=eyJ2IjoiMSJ9.uHchWzsFqajzi0KgmByOpLyDwa21aanfcm6pVzVlK36LPfRgpIR1MaPnvJluUz4qV8fk0Gk37h36x2qYvwzFVXKn60Ew3FvvYKtcjf67RFwUy9CbpmdvZJY_FUYe-QrWYfct0O2fjzJUuDO7_gkknd6pzm6oCebvEuL2BEMRbsM1cqr-B1Xkv1_6YtSz7upA.nPhCAwT-KjnR-d4qEinb0RHMHSazlsjyTVAww_Hj1DM&dib_tag=se&keywords=t.ben+talion&qid=1748696149&s=digital-text&sprefix=t.ben+talion%2Cdigital-text%2C84&sr=1-2" target="_blank" class="text-center">
-        <img src="powerstone2.jpg" alt="Buch 1: Power Stone - Light and Shadow" class="w-48 rounded shadow-lg">
-        <p class="mt-2"><strong>Book 2: Power Stone - Rebellion</strong></p>
-    </a>
-        
-    </div>
+    </section>
+  </main>
 
-    <!-- JavaScript für das Menü -->
-   <script>
+  <!-- JavaScript für Menü-Steuerung -->
+  <script>
     const menuBtn = document.getElementById('menu-btn');
     const closeBtn = document.getElementById('close-btn');
     const sideMenu = document.getElementById('side-menu');
 
     menuBtn.addEventListener('click', () => {
-        sideMenu.classList.remove('hidden');
+      sideMenu.classList.remove('-translate-x-full');
     });
 
     closeBtn.addEventListener('click', () => {
-        sideMenu.classList.add('hidden');
+      sideMenu.classList.add('-translate-x-full');
     });
 
-    // Schließt das Menü, wenn außerhalb geklickt wird
     document.addEventListener('click', (event) => {
-        if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-            sideMenu.classList.add('hidden');
-        }
+      if (
+        !sideMenu.contains(event.target) &&
+        !menuBtn.contains(event.target) &&
+        !sideMenu.classList.contains('md:block')
+      ) {
+        sideMenu.classList.add('-translate-x-full');
+      }
     });
-</script>
+  </script>
 
 </body>
 </html>
