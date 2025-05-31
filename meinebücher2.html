@@ -13,18 +13,22 @@
 </head>
 <body class="bg-black text-white">
     
-    <!-- Menü-Button -->
-  <div class="half left">
-    <button class="menu-button" onclick="toggleMenu('menu-left')">☰ Menü</button>
-    <div class="menu" id="menu-left">
-      <a href="index.html">Startseite</a>
-      <a href="#about2.html">Über mich</a>
-      <a href="meinebücher2.html">Meine Werke</a>
-      <a href="termine2.html">Termine / Veranstaltungen</a>
-      <a href="agb2.html">AGB</a>
-      <a href="kontakt2-html">Kontakt</a>
-      <a href="impressum2.html">Impressum</a>
-    </div>
+  
+ <!-- Menü-Button -->
+<button id="menu-btn" class="menu-button">☰ Menü</button>
+
+<!-- Seitenmenü -->
+<div id="side-menu" class="menu hidden">
+  <a href="index.html">Startseite</a>
+  <a href="#about2.html">Über mich</a>
+  <a href="meinebücher2.html">Meine Werke</a>
+  <a href="termine2.html">Termine / Veranstaltungen</a>
+  <a href="agb2.html">AGB</a>
+  <a href="kontakt2-html">Kontakt</a>
+  <a href="impressum2.html">Impressum</a>
+  <button id="close-btn" class="text-red-500 mt-4">✖ Schließen</button>
+</div>
+
 
     <!-- Hauptinhalt -->
     <div class="flex flex-col items-center text-center p-6">
@@ -65,25 +69,26 @@
     </div>
 
     <!-- JavaScript für das Menü -->
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const closeBtn = document.getElementById('close-btn');
-        const sideMenu = document.getElementById('side-menu');
+   <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const sideMenu = document.getElementById('side-menu');
 
-        menuBtn.addEventListener('click', () => {
-            sideMenu.classList.remove('-translate-x-full');
-        });
+    menuBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('hidden');
+    });
 
-        closeBtn.addEventListener('click', () => {
-            sideMenu.classList.add('-translate-x-full');
-        });
+    closeBtn.addEventListener('click', () => {
+        sideMenu.classList.add('hidden');
+    });
 
-        document.addEventListener('click', (event) => {
-            if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target)) {
-                sideMenu.classList.add('-translate-x-full');
-            }
-        });
-    </script>
+    // Schließt das Menü, wenn außerhalb geklickt wird
+    document.addEventListener('click', (event) => {
+        if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+            sideMenu.classList.add('hidden');
+        }
+    });
+</script>
 
 </body>
 </html>
