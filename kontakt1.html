@@ -16,36 +16,84 @@
         }
         .navbar {
             background-color: #0aa667;
-            padding: 15px;
+            padding: 10px 20px; /* Schmaler Balken */
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between; /* Menü-Links und Button getrennt */
+            align-items: center;
         }
-        .navbar button {
-            background-color: white;
-            color: #660082;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
+
+        .navmenu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
         }
-        .menu {
-            display: none;
-            margin-top: 20px;
+
+        .navmenu li {
+            margin-right: 30px;
+            position: relative; /* Für Dropdown-Menüs */
         }
-        .menu a {
-            display: block;
-            color: white;
+
+        .navmenu a {
             text-decoration: none;
-            font-size: 20px;
+            color: white;
+            font-size: 18px;
             padding: 10px;
+            display: block;
         }
-        .contact-form {
+
+        .navmenu a:hover {
+            background-color: #b0d5ac;
+            border-radius: 5px;
+        }
+
+        /* Dropdown-Menü */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0aa667;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+        }
+
+        .dropdown-content li a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .dropdown-content li a:hover {
+            background-color: #f1f1f1;
+            color: #660082;
+        }
+
+        .navmenu li:hover .dropdown-content {
+            display: block;
+        }
+        .contact-container {
             margin-top: 30px;
             padding: 20px;
             background-color: #660082;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .contact-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
         }
         input, textarea {
-            width: 80%;
+            width: 90%;
             padding: 10px;
             margin-top: 10px;
             border: none;
@@ -61,39 +109,95 @@
             margin-top: 10px;
             border-radius: 5px;
         }
+        button:hover {
+            background-color: #088e59;
+        }
     </style>
 </head>
 <body>
+
     <h1>
-        <img src="witchylogo.png" alt="Witchy Logo">
+        <img src="witchylogo.png">
         Lilian’s Witchy World
     </h1>
 
     <p>Willkommen in der magischen Welt von Lilian. Hier findest du Bücher, Zauber und vieles mehr.</p>
 
+ 
+
     <div class="navbar">
-        <button onclick="toggleMenu()">Menü anzeigen</button>
-    </div>
-
-    <div class="menu" id="menu">
-        <a href="#">Startseite</a>
-        <a href="/Lilians-Witchy-World/about/">Über mich</a>
-        <a href="#">Weiterbildungen</a>
-        <a href="#">Meine Bücher</a>
-        <a href="#">Meine Rezepte</a>
-        <a href="#">Social Media</a>
-        <a href="#">Bücher, die ich empfehle</a>
-        <a href="/Lilians-Witchy-World/contact/">Kontakt</a>
-    </div>
-
-    <div class="contact-form" id="kontakt">
+            <ul class="navmenu">
+                <li class="dropdown">
+                    <a href="index.html">Startseite</a>
+                    <ul class="dropdown-content">
+                        <li><a href="about.html">Über mich</a></li>
+                        <li><a href="weiterbildung.html">Weiterbildungen</a></li>
+                        <li><a href="meinemission.html">Meine Mission</a></li>
+                    </ul>
+                </li>
+                <li><a href="angebote.html">Meine Angebote</a></li>
+                <li class="dropdown">
+                    <a href="energie.html">Energetische Selbstarbeit</a>
+                    <ul class="dropdown-content">
+                        <li><a href="basics.html">Die Basics</a></li>
+                        <li><a href="reinigung.html">Energetische Reinigung</a></li>
+                        <li><a href="gedanken.html">Gedanken & Glaubenssätze</a></li>
+                    </ul>
+                </li>
+                <li><a href="meinebücher.html">Meine Bücher</a></li>
+                <li><a href="hörbuch.html">Meine Bücher als Hörbuch</a></li>
+                <li class="dropdown">
+                    <a href="rezepte.html">Rezepte ▼</a>
+                    <ul class="dropdown-content">
+                        <li><a href="seife.html">Körperseifen und Duschjelly</a></li>
+                        <li><a href="haare.html">Haarprodukte</a></li>
+                        <li><a href="#">Teemischungen für mehr Wohlbefinden</a></li>
+                        <li><a href="#">Räuchermischungen</a></li>
+                        <li><a href="#">Naturheilkunde</a></li>
+                        <li><a href="#">Salben & Balsam</a></li>
+                    </ul>
+                </li>
+                <li><a href="empfehlen.html">Bücher, die ich empfehle</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="agb.html">AGB</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </div>
+    <div class="contact-container" id="kontakt">
         <h2>Kontakt</h2>
-        <form>
-            <input type="text" placeholder="Name" required><br>
-            <input type="email" placeholder="E-Mail" required><br>
-            <textarea placeholder="Nachricht" rows="5" required></textarea><br>
-            <button type="submit">Senden</button>
-        </form>
+        <p class="contact-text">
+            Schön, dass du hier bist! 💜  
+            Ich freue mich, dass du den Weg zu meiner Seite gefunden hast.  
+            Falls du Fragen zu meiner Arbeit, meinen Projekten oder einfach etwas auf dem Herzen hast,  
+            kannst du mir hier eine Nachricht senden. Ich werde mich so bald wie möglich bei dir melden! ✨
+        </p>
+<a href="https://www.instagram.com/elisabethann_wolf" target="_blank">
+    <button style="background-color: #E1306C; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+        <img src="instagram.png" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle;">
+        Folge mir auf Instagram
+    </button>
+</a>
+
+<a href="https://www.youtube.com/channel/UC60W9fyZAJyXKZ3vzj3OxLA" target="_blank">
+    <img src="youtube.png" alt="YouTube" width="50" height="50">
+</a>
+
+
+<form action="https://formspree.io/f/mkgjyywk" method="POST">
+  <label for="email">Möchtest du mehr über meine Arbeit, kommende Bücher und spannende Projekte erfahren? Dann trage dich hier für meinen Newsletter ein und bleibe auf dem Laufenden!</label><br>
+  <input type="email" name="email" id="email" required placeholder="dein@email.de">
+  <button type="submit">Anmelden</button>
+
+  <p style="font-size: small;">
+    Mit dem Absenden erklärst du dich mit der Speicherung deiner E-Mail-Adresse zum Zweck des Newsletter-Versands einverstanden.
+    <a href="/agb.html">Mehr erfahren</a>
+  </p>
+</form>
+
+
+
+     
+
     </div>
 
     <script>
@@ -106,5 +210,6 @@
             }
         }
     </script>
+
 </body>
 </html>
