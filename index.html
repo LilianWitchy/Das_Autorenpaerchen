@@ -170,6 +170,8 @@
       text-decoration: none;
       font-size: 0.95rem;
       transition: background-color 0.3s ease;
+      z-index: 2; /* hinzugefügt */
+      position: relative; /* hinzugefügt */
     }
 
     .footer-button:hover {
@@ -195,10 +197,11 @@
       }
 
       .footer-button {
-        position: static;
+        position: relative; /* angepasst für mobile Geräte */
         display: block;
         margin: 1rem auto 0;
         text-align: center;
+        z-index: 2; /* hinzugefügt */
       }
 
       .headline {
