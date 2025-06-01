@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <img src="logoap.png" alt="LogoAutorenPärchen">
   <title>DAS Autorenpärchen</title>
 
   <style>
@@ -22,13 +21,21 @@
 
     .headline {
       width: 100%;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: black;
       padding: 1.5rem 1rem;
       font-size: 2.2em;
       font-weight: bold;
       color: silver;
       letter-spacing: 1px;
+    }
+
+    .headline img {
+      height: 50px;
+      width: auto;
+      margin-right: 1rem;
     }
 
     .intro-text {
@@ -193,12 +200,25 @@
         margin: 1rem auto 0;
         text-align: center;
       }
+
+      .headline {
+        flex-direction: column;
+        font-size: 1.8em;
+      }
+
+      .headline img {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="headline">DAS Autorenpärchen</div>
+  <div class="headline">
+    <img src="logoap.png" alt="Logo Autorenpärchen" />
+    DAS Autorenpärchen
+  </div>
 
   <div class="intro-text">
     <p>Bereits in Liebe vereint. Nun auch im Schreiben DIE gemeinsame Leidenschaft gefunden.</p>
@@ -292,4 +312,3 @@
 
 </body>
 </html>
-
