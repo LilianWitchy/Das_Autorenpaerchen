@@ -163,6 +163,7 @@
     .footer-button {
       position: absolute;
       bottom: 20px;
+      left: 20px;
       padding: 0.6rem 1rem;
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid white;
@@ -170,16 +171,11 @@
       text-decoration: none;
       font-size: 0.95rem;
       transition: background-color 0.3s ease;
-      z-index: 2; /* hinzugefügt */
-      position: relative; /* hinzugefügt */
+      z-index: 2;
     }
 
     .footer-button:hover {
       background-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .left-button {
-      left: 20px;
     }
 
     .right-button {
@@ -197,11 +193,11 @@
       }
 
       .footer-button {
-        position: relative; /* angepasst für mobile Geräte */
+        position: relative;
         display: block;
         margin: 1rem auto 0;
         text-align: center;
-        z-index: 2; /* hinzugefügt */
+        z-index: 2;
       }
 
       .headline {
@@ -229,15 +225,6 @@
     <p>Diese Seite ist noch mitten im Aufbau und wird von mir selbst programmiert. Deshalb verzeiht mir bitte Fehler.</p>
   </div>
 
-<!-- Musik-Player -->
-    <div style="margin-top: 1.5rem;">
-      <p><strong>Begleitet von Musik:</strong></p>
-      <audio controls>
-        <source src="songautor.mp3" type="songautorenpärchen/mp3">
-      </audio>
-    </div>
-  </div>
-  
   <div class="container">
 
     <!-- Linke Hälfte -->
@@ -260,12 +247,21 @@
       <p>Diese Bücher haben einen Charakter, den du so noch nie erlebt hast. Also tauche ein, in die Welt von Arik und den Kraftsteinen.</p>
       <p>Neben meiner derzeitigen Tätigkeit widme ich mich mit großer Sorgfalt dem Lektorat von Texten. Wenn Sie Interesse an einer Zusammenarbeit haben, freue ich mich über eine Nachricht.</p>
 
+      <!-- Eingefügtes Video -->
+      <div style="margin-top: 2rem;">
+        <p><strong>Unser Lied:</strong></p>
+        <video width="100%" controls>
+          <source src="autoraudio.mp4" type="video/mp4">
+        
+        </video>
+      </div>
+
+      <!-- Korrekt positionierter Button -->
       <a href="https://lilianwitchy.github.io/Ben-Talions-World/" class="footer-button left-button" target="_blank">Meine eigene Webseite</a>
     </div>
 
     <!-- Rechte Hälfte -->
     <div class="half right">
-      <!-- Sterne -->
       <div class="stars"></div>
 
       <button class="menu-button" onclick="toggleMenu('menu-right')">☰ Menü</button>
